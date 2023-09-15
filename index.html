@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Nueva carpeta/ikimasu2.ico" type="image/x-icon">
+    <!-- RELACIONAR HTML CON SU ARCHIVO DE ESTILO -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/animaciones.css">
+    <!-- Links del sitio  fonts.googleapis.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap" rel="stylesheet">
+    <title>Ikimasu</title>
+</head>
+
+<body class="cielo">
+
+    <!-- Encabezado -->
+    <header class="header-linea">
+        <div>
+            <a href="#principal"><img id="logo" src="img/Nueva carpeta/ikimasu2.ico" alt=""></a>
+        </div>
+        <!-- Menú de navegación -->
+        <nav>
+            <a class="menu" href="index.html">Principal</a>
+            <a class="menu" href="templates/destinos.html">Destinos</a>
+            <a class="menu" href="templates/empresa.html">Empresa</a>
+            <a class="menu" href="templates/contacto.html">Contacto</a>
+            <a class="menu" href="templates/suscripcion.html">Suscripción</a>
+        </nav>
+    </header>
+
+
+    <!-- Contenido Principal // MAIN -->
+
+    <main id="principal">
+
+        <div class="contenedor">
+            <section class="seccion1">
+                <div class="division1">                    
+                    <nav>
+                        <ul>
+                            <li><a class="accion" href="#gourmet">Gourmet</a></li>
+                            <li><a class="accion" href="#ecoturismo">Ecoturismo</a></li>
+                            <li><a class="accion" href="#cruceros">Cruceros</a></li>
+                            <li><a class="accion" href="#polos">Extremos del Mundo</a></li>
+                        </ul>
+                    </nav>    
+            </section>    
+            <section class="seccion2">    
+                <section class="seccionBuscador">    
+                    <div class="buscador">
+                        <div>
+                            <select name="destino" id="destino">
+                                <option value=" "style="text-align: center;">Seleccione Destino</option>
+                                <optgroup label="África">
+                                    <option value="africaCentral">África Central</option>  
+                                    <option value="africaEste">África Oriental</option>
+                                    <option value="africaNorte">África del Norte</option>
+                                    <option value="africaOeste">África Occidental</option>
+                                    <option value="africaSur">África del Sur</option>                               
+                                </optgroup>
+                                <optgroup label="América">
+                                    <option value="americaNorte">América del Norte</option>
+                                    <option value="centroAmerica">Centroamérica</option>
+                                    <option value="americaSur">América del Sur</option> 
+                                </optgroup>
+                                <optgroup label="Asia">
+                                    <option value="asiaCentral">Asia Central</option>  
+                                    <option value="asiaSur">Asia Meridional</option>
+                                    <option value="asiaOeste">Asia Occidental</option>
+                                    <option value="asiaEste">Asia Oriental</option>
+                                    <option value="asiaNorte">Asia Septentrional</option>
+                                    <option value="asiaSudeste">Sudeste Asiático</option>
+                                </optgroup>
+                                <optgroup label="Europa">
+                                    <option value="europaOeste">Europa Atlántica</option>     
+                                    <option value="europaCentral">Europa Central</option>
+                                    <option value="europaNorte">Europa Ibérica</option>
+                                    <option value="europaMediterranea">Europa Mediterránea</option>
+                                </optgroup>
+                                <optgroup label="Oceanía">
+                                    <option value="melanesia">Melanesia</option>   
+                                    <option value="micronesia">Micronesia</option>
+                                    <option value="polinesia">Polinesia</option>
+                                    <option value="regiónAustraliana">Región Australiana</option>                                 
+                                </optgroup>
+                                <optgroup label="Cruceros">
+                                    <option value="cruceros">Cruceros por el Mundo</option>                                    
+                                </optgroup>
+                                <optgroup label="Polos">
+                                    <option value="antartida">Antártida</option>   
+                                    <option value="artico">Ártico</option>                                 
+                                </optgroup>                                
+                            </select>
+                        </div>
+                        <div>
+                            <select name="origen" id="origen" placeholder="Ingrese desde donde viaja">
+                                <option value="" style="text-align: center;">Seleccione Origen</option>
+                                <optgroup label="África">
+                                    <option value="africaCentral">África Central</option>  
+                                    <option value="africaEste">África Oriental</option>
+                                    <option value="africaNorte">África del Norte</option>
+                                    <option value="africaOeste">África Occidental</option>
+                                    <option value="africaSur">África del Sur</option>                               
+                                </optgroup>
+                                <optgroup label="América">
+                                    <option value="americaNorte">América del Norte</option>
+                                    <option value="centroAmerica">Centroamérica</option>
+                                    <option value="americaSur">América del Sur</option> 
+                                </optgroup>
+                                <optgroup label="Asia">
+                                    <option value="asiaCentral">Asia Central</option>  
+                                    <option value="asiaSur">Asia Meridional</option>
+                                    <option value="asiaOeste">Asia Occidental</option>
+                                    <option value="asiaEste">Asia Oriental</option>
+                                    <option value="asiaNorte">Asia Septentrional</option>
+                                    <option value="asiaSudeste">Sudeste Asiático</option>
+                                </optgroup>
+                                <optgroup label="Europa">
+                                    <option value="europaOeste">Europa Atlántica</option>     
+                                    <option value="europaCentral">Europa Central</option>
+                                    <option value="europaNorte">Europa Ibérica</option>
+                                    <option value="europaMediterranea">Europa Mediterránea</option>
+                                </optgroup>
+                                <optgroup label="Oceanía">
+                                    <option value="melanesia">Melanesia</option>   
+                                    <option value="micronesia">Micronesia</option>
+                                    <option value="polinesia">Polinesia</option>
+                                    <option value="regiónAustraliana">Región Australiana</option>                                 
+                                </optgroup>
+                                <optgroup label="Cruceros">
+                                    <option value="cruceros">Cruceros por el Mundo</option>                                    
+                                </optgroup>
+                                <optgroup label="Polos">
+                                    <option value="antartida">Antártida</option>   
+                                    <option value="artico">Ártico</option>                                 
+                                </optgroup>                                
+                            </select>
+                        </div>
+                        <div>
+                            <form id="fechasIF">
+                                <label for="fechaInicio" style="color: aliceblue;">Ida:</label>
+                                <input type="date" id="fechaInicio" name="fechaInicio">
+                                <label for="fechaFin" style="color: aliceblue;">Vuelta:</label>
+                                <input type="date" id="fechaFin" name="fechaFin">
+                              </form>
+                        </div>
+                        <div>
+                            <button id="buscar">Buscar</button>
+                        </div>
+                    </div>    
+                </section>    
+                
+                <section class="seccionContinentes">    
+                    <div class="africa">
+                        <div class="text">África</div>
+                        <img src="img/África/África Central/Camerún2.jpg" width="100" height="100" alt="Camerún" class="img1">
+                        <img src="img/África/África del Este u Oriental/Yibuti.jpg" width="100" height="100" alt="Yibuti" class="img2">
+                        <img src="img/África/África del Sur/Botsuana.jpg" width="100" height="100" alt="Botsuana" class="img3">
+                    </div>    
+                    <div class="america">    
+                        <div class="americaNorte">
+                            <h4>Norteamérica/</h4>
+                            <h4>Centroamérica</h4>
+                            <img src="img/América/América del Norte - Centroamérica/Estados Unidos.jpg" width="100" height="100" alt="EE.UU." class="img4">
+                            <img src="img/América/América del Norte - Centroamérica/Belice.jpg" width="100" height="100" alt="Belice" class="img5">
+                            <img src="img/América/América del Norte - Centroamérica/Canadá 2.webp" alt="" width="100" height="100" alt="EE.UU." class="img6">
+                        </div>    
+                        <div class="americaSur">
+                            <h4>América del Sur</h4>
+                            <img src="img/América/América del Sur/Argentina2.jpg" width="100" height="100" alt="Argentina" class="img7">
+                            <img src="img/América/América del Sur/Bolivia.jpg" width="100" height="100" alt="Bolivia" class="img8">
+                            <img src="img/América/América del Sur/Brasil.jpg" width="100" height="100" alt="Brasil" class="img9">
+                        </div>                        
+                    </div>    
+                    <div class="asia">
+                        <h4>Asia</h4>
+                        <img src="img/Asia/Asia Central/Kazajistán.jpg" width="100" height="100" alt="Kazajistán" class="img10">
+                        <img src="img/Asia/Asia Occidental/Emiratos Árabes3.jpg" width="100" height="100" alt="Emiratos Árabes" class="img11">
+                        <img src="img/Asia/Asia Oriental/Japón2.jpg" width="100" height="100" alt="Japón" class="img12">
+                    </div>    
+                    <div class="europa">
+                        <h4>Europa</h4>
+                        <img src="img/Europa/Europa atlántica/Bélgica3.jpg" width="100" height="100" alt="Bélgica" class="img13">
+                        <img src="img/Europa/Europa central/Hungría2.jpg" width="100" height="100" alt="Hungría" class="img14">
+                        <img src="img/Europa/Europa mediterránea/Italia3.webp" width="100" height="100" alt="Italia" class="img15">
+                    </div>    
+                    <div class="oceania">
+                        <h4>Oceanía</h4>
+                        <img src="img/Oceanía/Micronesia/Las Marianas.webp" width="100" height="100" alt="Las Marianas" class="img16">
+                        <img src="img/Oceanía/Polinesia/Tahití2.jpg" width="100" height="100" alt="Tahití" class="img17">
+                        <img src="img/Oceanía/Región australiana/Australia.webp" width="100" height="100" alt="Australia" class="img18">
+                    </div>    
+                    
+                </section>    
+            </section>
+        </div>   
+
+    </main>
+
+
+    <!-- Sección Gourmet -->
+    <section id="gourmet">
+
+        <div class="gourmet">
+
+            <div>
+                <h3>Sección Gourmet</h3>
+            </div>   
+
+            <div class="imgGourmet">
+                <img src="img/Gourmet/Gourmet (vaca-al-vino-tinto).webp" width="300" height="200" alt="Vaca al vino tinto">
+                <img src="img/Gourmet/Gourmet2(pizza-gourmet).jpg" width="300" height="200" alt="Pizza gourmet">
+                <img src="img/Gourmet/Gourmet3(Ensalada-gourmet).webp" width="300" height="200" alt="Ensalada gourmet">
+                <img src="img/Gourmet/Gourmet4(Cocina gourmet mexicana).jpeg" width="300" height="200" alt="Cocina gourmet mexicana">
+                <img src="img/Gourmet/Gourmet5(Scallops).jpg" width="300" height="200"  alt="Escalopes">
+                <img src="img/Gourmet/Gourmet6(carne en cilindros y cuadrados de polenta - comida francesa).jpg" width="300" height="200" alt="Carne roja y polenta">
+                <img src="img/Gourmet/Gourmet7(fideos).jpeg" width="300" height="200" alt="Fideos">
+                <img src="img/Gourmet/Gourmet8(hummus-alubias).jpg" width="300" height="200" alt="Humus alubias">
+            </div>
+ 
+        </div>
+
+    </section>
+
+    <!-- Sección Ecoturismo -->
+    <section id="ecoturismo">
+
+        <div class="ecoturismo">
+
+            <div>
+                <h3>Sección Ecoturismo</h3>
+            </div>            
+
+            <div class="imgEcoturismo">
+                <img src="img/Ecoturismo/ecoturismo1.jfif" width="300" height="200" alt="Ecoturismo">
+                <img src="img/Ecoturismo/ecoturismo2.webp" width="300" height="200" alt="Ecoturismo">
+                <img src="img/Ecoturismo/ecoturismo3.webp" width="300" height="200" alt="Ecoturismo">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sección Cruceros -->
+    <section id="cruceros">
+
+        <div class="cruceros">
+
+            <div>
+                <h3>Sección Cruceros</h3>
+            </div>
+
+            <div class="imgCruceros">
+                <img src="img/Cruceros/Cruceros.jpg" width="300" height="200" alt="Cruceros imagen 1">
+                <img src="img/Cruceros/Cruceros2.jpg" width="300" height="200" alt="Cruceros imagen 2">
+                <img src="img/Cruceros/Cruceros3.webp" width="300" height="200" alt="Cruceros imagen 3">
+                <img src="img/Cruceros/Cruceros4.avif" width="300" height="200" alt="Cruceros imagen 4">
+                <img src="img/Cruceros/Cruceros5.webp" width="300" height="200" alt="Cruceros imagen 5">
+                <img src="img/Cruceros/Cruceros6.jfif" width="300" height="200" alt="Cruceros imagen 6">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sección Polos -->
+    <section id="polos">
+
+        <div class="polos">
+
+            <div>
+                <h3>Sección Polos</h3>
+            </div>            
+
+            <div class="imgPolos">
+                <img src="img/Antártida-Ártico/Antártida.jpg" width="300" height="200" alt="Antártida imagen 1">
+                <img src="img/Antártida-Ártico/Antártida2.jpg" width="300" height="200" alt="Antártida imagen 2">
+                <img src="img/Antártida-Ártico/Antártida3.jpg" width="300" height="200" alt="Antártida imagen 3">
+                <img src="img/Antártida-Ártico/Antártida4.webp" width="300" height="200" alt="Antártida imagen 4">
+                <img src="img/Antártida-Ártico/Antártida5.avif" width="300" height="200" alt="Antártida imagen 5">
+                <img src="img/Antártida-Ártico/Ártico.jpg" width="300" height="200" alt="Ártico imagen 1">
+                <img src="img/Antártida-Ártico/Ártico2.jpg" width="300" height="200" alt="Ártico imagen 2">
+                <img src="img/Antártida-Ártico/Ártico3.jpeg" width="300" height="200" alt="Ártico imagen 3">
+                <img src="img/Antártida-Ártico/Ártico4.jpg" width="300" height="200" alt="Ártico imagen 4">
+                <img src="img/Antártida-Ártico/Ártico5.jpg" width="300" height="200" alt="Ártico imagen 5">
+                <img src="img/Antártida-Ártico/Ártico6.avif" width="300" height="200" alt="Ártico imagen 6">
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

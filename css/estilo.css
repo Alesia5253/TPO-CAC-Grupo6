@@ -1,0 +1,244 @@
+/* ----LETRA---- */
+@font-face {
+    font-family: 'Prompt';
+    src: url(../fonts/Prompt/Prompt-Medium.ttf)
+}
+
+
+/*--------------------------------------------------------------
+# Todo el archivo
+--------------------------------------------------------------*/
+
+/* Selector universal */
+* {
+    margin: 0%; /*Elimina todo margen que trae por defecto*/
+    padding: 0%; /*Elimina todo relleno que trae por defecto*/
+    font-family: 'Prompt';
+}
+
+/* Fondo */
+.cielo {
+    background: url("../img/backg7.1.png") repeat;
+    background-size: cover;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+/* Eliminar comportamiento en bloque de nav y la div */
+.header-linea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo para el logo */
+#logo {
+    width: 4vw;  /*Ancho*/
+    height: auto;/*Altura*/
+    border-radius: 30% 30% 30% 30%;  /*Redondea dos vértices del logo*/
+    box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw rgba(111, 83, 236, 0.8); /*Agrega sombra alrededor*/
+    margin-left: 10vw;
+}
+
+/* Estilo en el encabezado header:*/
+header {
+    background: linear-gradient(to left, rgba(77, 103, 121, 0.2),rgba(250, 249, 249, 0.4)); /*Degradado de colores*/
+    height: 11vh; /*Altura*/
+    font-size: 1.3vw; /*Tamaño de texto*/
+    text-align:right;  /*Alinear texto*/
+    border-radius: 0% 0% 0% 0%; /*Redondea un vértice del logo(un extremo)*/
+    position: fixed;
+    width: 100%;
+}
+
+/* Menu */
+.menu {
+    text-decoration: none; /*Elimina subrayado*/
+    color:rgb(137, 33, 153);  /*Color texto*/
+    padding-right: 0.3vw; /*Separación entre el texto del menu*/
+    margin-right: 3vw;
+    text-shadow: 1px 1px 2px rgba(252, 251, 251, 0.5);
+}
+
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+.contenedor {
+    padding-top: 15vh;
+    display: flex;
+    flex-direction:row; /* pone las dos secciones en columnas */
+    justify-content:space-between; /* Centra las columnas horizontalmente */
+    align-items: center; /* Centra las columnas verticalmente */
+    text-align: center;
+    padding: 2vw;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+.seccion1 {
+    flex-grow: 1;
+    margin: 1vw;
+}
+
+.seccion2 {
+    flex-grow: 2;
+    margin: 5vw;
+}
+
+#menu {
+    font-family: 'Saira';
+    src: url(../fonts/Saira/Saira-Italic-VariableFont_wdth\,wght.ttf);
+    font-weight: bold;
+}
+
+.accion {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /*Elimina subrayado*/
+    color:rgb(169, 15, 38);  /*Color texto*/
+    padding-right: 0.2vw; /*Separación entre el texto*/
+    font-weight: bold;
+    font-size: 2vw;
+    background-color: #e6dfe4;
+    padding: 3vh;
+    margin-top: 2vh;
+    border-radius: 30%;
+    box-shadow: 0.2vw 0.2vw 0.2vw 0.2vw rgba(111, 83, 236, 0.8); /*Agrega sombra alrededor*/
+}
+
+.accion:hover {
+    transform: scale(1.5); /* El texto se agranda un 50% al pasar el cursor */
+}
+
+.seccionBuscador {
+    background-color: #49035b;
+    height: auto;/*Altura*/
+    border-radius: 15% 15% 15% 15%;  /*Redondea dos vértices del logo*/
+    box-shadow: 0.4vw 0.4vw 0.1vw 0.1vw rgba(127, 108, 209, 0.8); /*Agrega sombra alrededor*/
+    padding: 4vh;
+}
+
+.buscador {
+    display: flex;
+    justify-content:space-between; /* Centra las columnas horizontalmente */
+    align-items: center; /* Centra las columnas verticalmente */
+    text-align: center;
+}
+
+#destino {
+    margin: 1vw;
+    border-radius: 50%;
+    padding: 1vh;
+    font-style: italic;
+}
+
+#origen {
+    margin: 1vw;
+    border-radius: 50%;
+    padding: 1vh;
+    font-style: italic;
+}
+
+#fechasIF {
+    display: flex;
+    flex-direction: row;
+    margin: 2vw;
+}
+
+#fechaInicio {
+    margin-right: 2vw;
+}
+
+#buscar {
+    font-size: 3vh;
+    margin-right: 2vw;
+    border-radius: 10%;
+    padding: 0.9vh;
+    background-color: rgb(68, 4, 128);
+    color: antiquewhite;
+    font-weight: bold;
+    border-color: aliceblue;
+    border-width: 0.8vh;
+}
+
+.seccionContinentes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 7vw;
+    margin-top: 5vh;;
+}
+
+.africa
+.america
+.asia
+.europa
+.oceania {
+    flex-basis: 20%;
+    margin: 2vw;
+    background-color: black;
+    align-items: center;
+}
+
+.america {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20vh;
+    padding: 3vh;
+}
+
+
+/*--------------------------------------------------------------
+# GOURMET
+--------------------------------------------------------------*/
+
+.gourmet {
+    padding-top: 20vh;
+    margin: 5vw;
+}
+
+
+/*--------------------------------------------------------------
+# ECOTURISMO
+--------------------------------------------------------------*/
+
+.ecoturismo {
+    padding-top: 20vh;
+    margin: 5vw;
+}
+
+
+/*--------------------------------------------------------------
+# CRUCEROS
+--------------------------------------------------------------*/
+
+.cruceros {
+    padding-top: 20vh;
+    margin: 5vw;
+}
+
+
+/*--------------------------------------------------------------
+# POLOS
+--------------------------------------------------------------*/
+
+.polos {
+    padding-top: 20vh;
+    margin: 5vw;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/

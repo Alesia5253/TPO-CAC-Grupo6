@@ -1,0 +1,290 @@
+/* Amimaciones de las imagenes */
+
+/*  #################################################
+    AFRICA
+    #################################################  */
+
+  .africa {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
+  
+  .africa img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img1 {
+    display: block;
+    margin: auto;
+  }
+
+  .img2,
+  .img3 {
+    opacity: 0;
+    display: block;
+    margin: auto;
+  }
+  
+  .africa:hover .img1 {
+    opacity: 1;
+    transform: scale(1.5) translate(0px, 50px);
+  }
+
+  .africa:hover .img2 {
+    opacity: 1;
+    transform: scale(1.5) translate(-50px, -50px);
+  }
+  
+  .africa:hover .img3 {
+    opacity: 1;
+    transform: scale(1.5) translate(50px, -50px);
+  }
+  
+  .africa img {
+    transition: all 0.5s ease-in-out;
+  }
+
+
+ /*  #################################################
+    AMERICA 
+    #################################################  */
+
+  /* América del Norte / Centroamérica */
+
+  .americaNorte {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .americaNorte img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img4 {
+    display: block;
+    margin: auto;
+  }
+
+  .img5,
+  .img6 {
+    opacity: 0;
+    display: block;
+    margin: auto;
+  }
+  
+  .americaNorte:hover .img4 {
+    opacity: 1;
+    transform: scale(1.5) translate(0px, 50px);
+  }
+
+  .americaNorte:hover .img5 {
+    opacity: 1;
+    transform: scale(1.5) translate(-50px, -50px);
+  }
+  
+  .americaNorte:hover .img6 {
+    opacity: 1;
+    transform: scale(1.5) translate(50px, -50px);
+  }
+  
+  .americaNorte img {
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  /* América del Sur */
+
+  .americaSur {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .americaSur img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img7 {
+    display: block;
+    margin: auto;
+  }
+
+  .img8,
+  .img9 {
+    opacity: 0;
+    display: block;
+    margin: auto;
+  }
+  
+  .americaSur:hover .img7 {
+    opacity: 1;
+    transform: scale(1.5) translate(0px, 50px);
+  }
+
+  .americaSur:hover .img8 {
+    opacity: 1;
+    transform: scale(1.5) translate(-50px, -50px);
+  }
+  
+  .americaSur:hover .img9 {
+    opacity: 1;
+    transform: scale(1.5) translate(50px, -50px);
+  }
+  
+  .americaSur img {
+    transition: all 0.5s ease-in-out;
+  }
+
+
+/*  #################################################
+    ASIA 
+    #################################################  */
+
+  .asia {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .asia img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img10 {
+    display: block;
+    margin: auto;
+  }
+
+  .img11,
+  .img12 {
+    opacity: 0;
+    display: block;
+    margin: auto;
+  }
+  
+  .asia:hover .img10 {
+    opacity: 1;
+    transform: scale(1.5) translate(0px, 50px);
+  }
+
+  .asia:hover .img11 {
+    opacity: 1;
+    transform: scale(1.5) translate(-50px, -50px);
+  }
+  
+  .asia:hover .img12 {
+    opacity: 1;
+    transform: scale(1.5) translate(50px, -50px);
+  }
+  
+  .asia img {
+    transition: all 0.5s ease-in-out;
+  }
+
+
+/*  #################################################
+    EUROPA 
+    #################################################  */
+
+      .europa {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+      
+      .europa img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .img13 {
+        display: block;
+        margin: auto;
+      }
+    
+      .img14,
+      .img15 {
+        opacity: 0;
+        display: block;
+        margin: auto;
+      }
+      
+      .europa:hover .img13 {
+        opacity: 1;
+        transform: scale(1.5) translate(0px, 50px);
+      }
+    
+      .europa:hover .img14 {
+        opacity: 1;
+        transform: scale(1.5) translate(-50px, -50px);
+      }
+      
+      .europa:hover .img15 {
+        opacity: 1;
+        transform: scale(1.5) translate(50px, -50px);
+      }
+      
+      .europa img {
+        transition: all 0.5s ease-in-out;
+      }
+
+
+
+/*  #################################################
+    OCEANIA 
+    #################################################  */
+
+      .oceania {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+      
+      .oceania img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .img16 {
+        display: block;
+        margin: auto;
+      }
+    
+      .img17,
+      .img18 {
+        opacity: 0;
+        display: block;
+        margin: auto;
+      }
+      
+      .oceania:hover .img16 {
+        opacity: 1;
+        transform: scale(1.5) translate(0px, 50px);
+      }
+    
+      .oceania:hover .img17 {
+        opacity: 1;
+        transform: scale(1.5) translate(-50px, -50px);
+      }
+      
+      .oceania:hover .img18 {
+        opacity: 1;
+        transform: scale(1.5) translate(50px, -50px);
+      }
+      
+      .oceania img {
+        transition: all 0.5s ease-in-out;
+      }
