@@ -1,17 +1,17 @@
 /* Amimaciones de las imagenes */
 
 /*  #################################################
-    AFRICA
+    CUYO
     #################################################  */
 
-  .africa {
+  .cuyo {
     position: relative;
     width: 100px;
     height: 100px;
     text-align: center;
   }
   
-  .africa img {
+  .cuyo img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -20,6 +20,7 @@
   .img1 {
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
 
   .img2,
@@ -27,41 +28,40 @@
     opacity: 0;
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
   
-  .africa:hover .img1 {
+  .cuyo:hover .img1 {
     opacity: 1;
     transform: scale(1.5) translate(0px, 50px);
   }
 
-  .africa:hover .img2 {
+  .cuyo:hover .img2 {
     opacity: 1;
     transform: scale(1.5) translate(-50px, -50px);
   }
   
-  .africa:hover .img3 {
+  .cuyo:hover .img3 {
     opacity: 1;
     transform: scale(1.5) translate(50px, -50px);
   }
   
-  .africa img {
+  .cuyo img {
     transition: all 0.5s ease-in-out;
   }
 
 
- /*  #################################################
-    AMERICA 
+/*  #################################################
+    LITORAL 
     #################################################  */
 
-  /* América del Norte / Centroamérica */
-
-  .americaNorte {
+  .litoral {
     position: relative;
     width: 100px;
     height: 100px;
   }
   
-  .americaNorte img {
+  .litoral img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -70,6 +70,7 @@
   .img4 {
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
 
   .img5,
@@ -77,37 +78,40 @@
     opacity: 0;
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
   
-  .americaNorte:hover .img4 {
+  .litoral:hover .img4 {
     opacity: 1;
     transform: scale(1.5) translate(0px, 50px);
   }
 
-  .americaNorte:hover .img5 {
+  .litoral:hover .img5 {
     opacity: 1;
     transform: scale(1.5) translate(-50px, -50px);
   }
   
-  .americaNorte:hover .img6 {
+  .litoral:hover .img6 {
     opacity: 1;
     transform: scale(1.5) translate(50px, -50px);
   }
   
-  .americaNorte img {
+  .litoral img {
     transition: all 0.5s ease-in-out;
   }
 
 
-  /* América del Sur */
+/*  #################################################
+    Noroeste 
+    #################################################  */
 
-  .americaSur {
+  .noroeste {
     position: relative;
     width: 100px;
     height: 100px;
   }
   
-  .americaSur img {
+  .noroeste img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -116,6 +120,7 @@
   .img7 {
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
 
   .img8,
@@ -123,39 +128,40 @@
     opacity: 0;
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
   
-  .americaSur:hover .img7 {
+  .noroeste:hover .img7 {
     opacity: 1;
     transform: scale(1.5) translate(0px, 50px);
   }
 
-  .americaSur:hover .img8 {
+  .noroeste:hover .img8 {
     opacity: 1;
     transform: scale(1.5) translate(-50px, -50px);
   }
   
-  .americaSur:hover .img9 {
+  .noroeste:hover .img9 {
     opacity: 1;
     transform: scale(1.5) translate(50px, -50px);
   }
   
-  .americaSur img {
+  .noroeste img {
     transition: all 0.5s ease-in-out;
   }
 
 
 /*  #################################################
-    ASIA 
+    REGION PAMPEANA  
     #################################################  */
 
-  .asia {
+  .regionPampeana {
     position: relative;
     width: 100px;
     height: 100px;
   }
   
-  .asia img {
+  .regionPampeana img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -164,6 +170,7 @@
   .img10 {
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
 
   .img11,
@@ -171,39 +178,40 @@
     opacity: 0;
     display: block;
     margin: auto;
+    border-radius: 10%;
   }
   
-  .asia:hover .img10 {
+  .regionPampeana:hover .img10 {
     opacity: 1;
     transform: scale(1.5) translate(0px, 50px);
   }
 
-  .asia:hover .img11 {
+  .regionPampeana:hover .img11 {
     opacity: 1;
     transform: scale(1.5) translate(-50px, -50px);
   }
   
-  .asia:hover .img12 {
+  .regionPampeana:hover .img12 {
     opacity: 1;
     transform: scale(1.5) translate(50px, -50px);
   }
   
-  .asia img {
+  .regionPampeana img {
     transition: all 0.5s ease-in-out;
   }
 
 
 /*  #################################################
-    EUROPA 
+    SIERRAS 
     #################################################  */
 
-      .europa {
+      .sierras {
         position: relative;
         width: 100px;
         height: 100px;
       }
       
-      .europa img {
+      .sierras img {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -212,6 +220,7 @@
       .img13 {
         display: block;
         margin: auto;
+        border-radius: 10%;
       }
     
       .img14,
@@ -219,40 +228,41 @@
         opacity: 0;
         display: block;
         margin: auto;
+        border-radius: 10%;
       }
       
-      .europa:hover .img13 {
+      .sierras:hover .img13 {
         opacity: 1;
         transform: scale(1.5) translate(0px, 50px);
       }
     
-      .europa:hover .img14 {
+      .sierras:hover .img14 {
         opacity: 1;
         transform: scale(1.5) translate(-50px, -50px);
       }
       
-      .europa:hover .img15 {
+      .sierras:hover .img15 {
         opacity: 1;
         transform: scale(1.5) translate(50px, -50px);
       }
       
-      .europa img {
+      .sierras img {
         transition: all 0.5s ease-in-out;
       }
 
 
 
 /*  #################################################
-    OCEANIA 
+    REGION METROPOLITANA
     #################################################  */
 
-      .oceania {
+      .regionMetropolitana {
         position: relative;
         width: 100px;
         height: 100px;
       }
       
-      .oceania img {
+      .regionMetropolitana img {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -261,6 +271,7 @@
       .img16 {
         display: block;
         margin: auto;
+        border-radius: 10%;
       }
     
       .img17,
@@ -268,23 +279,122 @@
         opacity: 0;
         display: block;
         margin: auto;
+        border-radius: 10%;
       }
       
-      .oceania:hover .img16 {
+      .regionMetropolitana:hover .img16 {
         opacity: 1;
         transform: scale(1.5) translate(0px, 50px);
       }
     
-      .oceania:hover .img17 {
+      .regionMetropolitana:hover .img17 {
         opacity: 1;
         transform: scale(1.5) translate(-50px, -50px);
       }
       
-      .oceania:hover .img18 {
+      .regionMetropolitana:hover .img18 {
         opacity: 1;
         transform: scale(1.5) translate(50px, -50px);
       }
       
-      .oceania img {
+      .regionMetropolitana img {
         transition: all 0.5s ease-in-out;
       }
+
+/*  #################################################
+    PATAGONIA
+    #################################################  */
+
+    .patagonia {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+    
+    .patagonia img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .img19 {
+      display: block;
+      margin: auto;
+      border-radius: 10%;
+    }
+  
+    .img20,
+    .img21 {
+      opacity: 0;
+      display: block;
+      margin: auto;
+      border-radius: 10%;
+    }
+    
+    .patagonia:hover .img19 {
+      opacity: 1;
+      transform: scale(1.5) translate(0px, 50px);
+    }
+  
+    .patagonia:hover .img20 {
+      opacity: 1;
+      transform: scale(1.5) translate(-50px, -50px);
+    }
+    
+    .patagonia:hover .img21 {
+      opacity: 1;
+      transform: scale(1.5) translate(50px, -50px);
+    }
+    
+    .patagonia img {
+      transition: all 0.5s ease-in-out;
+    }
+
+/*  #################################################
+    EXTREMO AUSTRAL
+    #################################################  */
+
+    .extremoAustral {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+    
+    .extremoAustral img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .img22 {
+      display: block;
+      margin: auto;
+      border-radius: 10%;
+    }
+  
+    .img23,
+    .img24 {
+      opacity: 0;
+      display: block;
+      margin: auto;
+      border-radius: 10%;
+    }
+    
+    .extremoAustral:hover .img22 {
+      opacity: 1;
+      transform: scale(1.5) translate(0px, 50px);
+    }
+  
+    .extremoAustral:hover .img23 {
+      opacity: 1;
+      transform: scale(1.5) translate(-50px, -50px);
+    }
+    
+    .extremoAustral:hover .img24 {
+      opacity: 1;
+      transform: scale(1.5) translate(50px, -50px);
+    }
+    
+    .extremoAustral img {
+      transition: all 0.5s ease-in-out;
+    }

@@ -31,113 +31,107 @@
             <a class="menu" href="templates/suscripcion.html">Suscripción</a>
         </nav>
     </header>
-
+    
 
     <!-- Contenido Principal // MAIN -->
 
     <main id="principal">
 
         <div class="contenedor">
-            <section class="seccion1">
-                <div class="division1">                    
-                    <nav>
-                        <ul>
-                            <li><a class="accion" href="#gourmet">Gourmet</a></li>
-                            <li><a class="accion" href="#ecoturismo">Ecoturismo</a></li>
-                            <li><a class="accion" href="#cruceros">Cruceros</a></li>
-                            <li><a class="accion" href="#polos">Extremos del Mundo</a></li>
-                        </ul>
-                    </nav>    
-            </section>    
-            <section class="seccion2">    
+
+            <section class="seccion1">    
                 <section class="seccionBuscador">    
                     <div class="buscador">
                         <div>
-                            <select name="destino" id="destino">
-                                <option value=" "style="text-align: center;">Seleccione Destino</option>
-                                <optgroup label="África">
-                                    <option value="africaCentral">África Central</option>  
-                                    <option value="africaEste">África Oriental</option>
-                                    <option value="africaNorte">África del Norte</option>
-                                    <option value="africaOeste">África Occidental</option>
-                                    <option value="africaSur">África del Sur</option>                               
+                            <select name="destino" id="destino" class="rumbo">
+                                <option value="">Seleccione Destino</option>
+                                <optgroup label="--------------- Cuyo ---------------">
+                                    <option value="cuyo">Mendoza</option>  
+                                    <option value="cuyo">San Juan</option>
+                                    <option value="cuyo">San Luis</option>                             
                                 </optgroup>
-                                <optgroup label="América">
-                                    <option value="americaNorte">América del Norte</option>
-                                    <option value="centroAmerica">Centroamérica</option>
-                                    <option value="americaSur">América del Sur</option> 
+                                <optgroup label="-------------- Litoral --------------">
+                                    <option value="litoral">Chaco</option>
+                                    <option value="litoral">Corrientes</option>
+                                    <option value="litoral">Entre Ríos</option> 
+                                    <option value="litoral">Formosa</option>
+                                    <option value="litoral">Misiones</option>
+                                    <option value="litoral">Santa Fe</option>
                                 </optgroup>
-                                <optgroup label="Asia">
-                                    <option value="asiaCentral">Asia Central</option>  
-                                    <option value="asiaSur">Asia Meridional</option>
-                                    <option value="asiaOeste">Asia Occidental</option>
-                                    <option value="asiaEste">Asia Oriental</option>
-                                    <option value="asiaNorte">Asia Septentrional</option>
-                                    <option value="asiaSudeste">Sudeste Asiático</option>
+                                <optgroup label="------------- Noroeste -------------">
+                                    <option value="noroeste">Catamarca</option>  
+                                    <option value="noroeste">Jujuy</option>
+                                    <option value="noroeste">La Rioja</option>
+                                    <option value="noroeste">Salta</option>
+                                    <option value="noroeste">Santiago del Estero</option>
+                                    <option value="noroeste">Tucumán</option>
                                 </optgroup>
-                                <optgroup label="Europa">
-                                    <option value="europaOeste">Europa Atlántica</option>     
-                                    <option value="europaCentral">Europa Central</option>
-                                    <option value="europaNorte">Europa Ibérica</option>
-                                    <option value="europaMediterranea">Europa Mediterránea</option>
+                                <optgroup label="------------ Patagonia ------------">
+                                    <option value="atagonia">Chubut</option>     
+                                    <option value="atagonia">Neuquén</option>
+                                    <option value="atagonia">Río Negro</option>
+                                    <option value="atagonia">Santa Cruz</option>
                                 </optgroup>
-                                <optgroup label="Oceanía">
-                                    <option value="melanesia">Melanesia</option>   
-                                    <option value="micronesia">Micronesia</option>
-                                    <option value="polinesia">Polinesia</option>
-                                    <option value="regiónAustraliana">Región Australiana</option>                                 
+                                <optgroup label="----- Región Metropolitana -----">
+                                    <option value="CABA">Ciudad Autónoma de Bs. As.</option>                                   
                                 </optgroup>
-                                <optgroup label="Cruceros">
-                                    <option value="cruceros">Cruceros por el Mundo</option>                                    
+                                <optgroup label="-------- Región Pampeana ------">
+                                    <option value="regionPampeana">Buenos Aires</option>     
+                                    <option value="regionPampeana">La Pampa</option>                                
                                 </optgroup>
-                                <optgroup label="Polos">
-                                    <option value="antartida">Antártida</option>   
-                                    <option value="artico">Ártico</option>                                 
+                                <optgroup label="-------------- Sierras --------------">
+                                    <option value="sierras">Córdoba</option>                                
+                                </optgroup>
+                                <optgroup label="--------- Extremo austral --------">
+                                    <option value="extremoAustral">Antártida e Islas del Atlántico Sur</option>     
+                                    <option value="extremoAustral">Tierra del Fuego</option>                                
                                 </optgroup>                                
                             </select>
                         </div>
                         <div>
-                            <select name="origen" id="origen" placeholder="Ingrese desde donde viaja">
-                                <option value="" style="text-align: center;">Seleccione Origen</option>
-                                <optgroup label="África">
-                                    <option value="africaCentral">África Central</option>  
-                                    <option value="africaEste">África Oriental</option>
-                                    <option value="africaNorte">África del Norte</option>
-                                    <option value="africaOeste">África Occidental</option>
-                                    <option value="africaSur">África del Sur</option>                               
+                            <select name="origen" id="origen">
+                                <option value="">Seleccione Origen</option>
+                                <optgroup label="--------------- Cuyo ---------------">
+                                    <option value="cuyo">Mendoza</option>  
+                                    <option value="cuyo">San Juan</option>
+                                    <option value="cuyo">San Luis</option>                             
                                 </optgroup>
-                                <optgroup label="América">
-                                    <option value="americaNorte">América del Norte</option>
-                                    <option value="centroAmerica">Centroamérica</option>
-                                    <option value="americaSur">América del Sur</option> 
+                                <optgroup label="-------------- Litoral --------------">
+                                    <option value="litoral">Chaco</option>
+                                    <option value="litoral">Corrientes</option>
+                                    <option value="litoral">Entre Ríos</option> 
+                                    <option value="litoral">Formosa</option>
+                                    <option value="litoral">Misiones</option>
+                                    <option value="litoral">Santa Fe</option>
                                 </optgroup>
-                                <optgroup label="Asia">
-                                    <option value="asiaCentral">Asia Central</option>  
-                                    <option value="asiaSur">Asia Meridional</option>
-                                    <option value="asiaOeste">Asia Occidental</option>
-                                    <option value="asiaEste">Asia Oriental</option>
-                                    <option value="asiaNorte">Asia Septentrional</option>
-                                    <option value="asiaSudeste">Sudeste Asiático</option>
+                                <optgroup label="------------- Noroeste -------------">
+                                    <option value="noroeste">Catamarca</option>  
+                                    <option value="noroeste">Jujuy</option>
+                                    <option value="noroeste">La Rioja</option>
+                                    <option value="noroeste">Salta</option>
+                                    <option value="noroeste">Santiago del Estero</option>
+                                    <option value="noroeste">Tucumán</option>
                                 </optgroup>
-                                <optgroup label="Europa">
-                                    <option value="europaOeste">Europa Atlántica</option>     
-                                    <option value="europaCentral">Europa Central</option>
-                                    <option value="europaNorte">Europa Ibérica</option>
-                                    <option value="europaMediterranea">Europa Mediterránea</option>
+                                <optgroup label="------------ Patagonia ------------">
+                                    <option value="patagonia">Chubut</option>     
+                                    <option value="patagonia">Neuquén</option>
+                                    <option value="patagonia">Río Negro</option>
+                                    <option value="patagonia">Santa Cruz</option>
                                 </optgroup>
-                                <optgroup label="Oceanía">
-                                    <option value="melanesia">Melanesia</option>   
-                                    <option value="micronesia">Micronesia</option>
-                                    <option value="polinesia">Polinesia</option>
-                                    <option value="regiónAustraliana">Región Australiana</option>                                 
+                                <optgroup label="----- Región Metropolitana -----">
+                                    <option value="CABA">Ciudad Autónoma de Bs. As.</option>                                   
                                 </optgroup>
-                                <optgroup label="Cruceros">
-                                    <option value="cruceros">Cruceros por el Mundo</option>                                    
+                                <optgroup label="-------- Región Pampeana ------">
+                                    <option value="regionPampeana">Buenos Aires</option>     
+                                    <option value="regionPampeana">La Pampa</option>                                
                                 </optgroup>
-                                <optgroup label="Polos">
-                                    <option value="antartida">Antártida</option>   
-                                    <option value="artico">Ártico</option>                                 
-                                </optgroup>                                
+                                <optgroup label="-------------- Sierras --------------">
+                                    <option value="sierras">Córdoba</option>                                
+                                </optgroup>
+                                <optgroup label="--------- Extremo austral --------">
+                                    <option value="extremoAustral">Antártida e Islas del Atlántico Sur</option>     
+                                    <option value="extremoAustral">Tierra del Fuego</option>                                
+                                </optgroup>                                       
                             </select>
                         </div>
                         <div>
@@ -154,145 +148,73 @@
                     </div>    
                 </section>    
                 
-                <section class="seccionContinentes">    
-                    <div class="africa">
-                        <div class="text">África</div>
-                        <img src="img/África/África Central/Camerún2.jpg" width="100" height="100" alt="Camerún" class="img1">
-                        <img src="img/África/África del Este u Oriental/Yibuti.jpg" width="100" height="100" alt="Yibuti" class="img2">
-                        <img src="img/África/África del Sur/Botsuana.jpg" width="100" height="100" alt="Botsuana" class="img3">
-                    </div>    
-                    <div class="america">    
-                        <div class="americaNorte">
-                            <h4>Norteamérica/</h4>
-                            <h4>Centroamérica</h4>
-                            <img src="img/América/América del Norte - Centroamérica/Estados Unidos.jpg" width="100" height="100" alt="EE.UU." class="img4">
-                            <img src="img/América/América del Norte - Centroamérica/Belice.jpg" width="100" height="100" alt="Belice" class="img5">
-                            <img src="img/América/América del Norte - Centroamérica/Canadá 2.webp" alt="" width="100" height="100" alt="EE.UU." class="img6">
+                <section class="seccionRegiones">   
+                    <div class="cuyo-litoral">
+                        <div class="cuyo">
+                            <div class="text">Cuyo</div>
+                            <img src="img/Cuyo/Mendoza/Mendoza4.webp" alt="Mendoza" class="img1">
+                            <img src="img/Cuyo/San Juan/San Juan2.webp" alt="San Juan" class="img2">
+                            <img src="img/Cuyo/San Luis/San Luis2.webp" alt="San Luis" class="img3">
                         </div>    
-                        <div class="americaSur">
-                            <h4>América del Sur</h4>
-                            <img src="img/América/América del Sur/Argentina2.jpg" width="100" height="100" alt="Argentina" class="img7">
-                            <img src="img/América/América del Sur/Bolivia.jpg" width="100" height="100" alt="Bolivia" class="img8">
-                            <img src="img/América/América del Sur/Brasil.jpg" width="100" height="100" alt="Brasil" class="img9">
+                        <div class="litoral">    
+                            <h4>Litoral</h4>
+                            <img src="img/Litoral/Chaco/Chaco1.webp" alt="Cahco" class="img4">
+                            <img src="img/Litoral/Entre Ríos/Entre Ríos3.webp" alt="Entre Ríos" class="img5">
+                            <img src="img/Litoral/Santa Fe/Santa Fe2.webp" alt="Santa Fe" class="img6">
+                        </div>
+                    </div> 
+                    
+                    <div class="noroeste-regionPampeana">
+                        <div class="noroeste">
+                            <h4>Noroeste</h4>
+                            <img src="img/Noroeste/Jujuy/Jujuy7.webp" alt="Jujuy"class="img7">
+                            <img src="img/Noroeste/La Rioja/La Rioja4.webp" alt="La Rioja"class="img8">
+                            <img src="img/Noroeste/Santiago del Estero/Santiago del Estero3.webp" alt="Santiago del Estero" class="img9">
                         </div>                        
-                    </div>    
-                    <div class="asia">
-                        <h4>Asia</h4>
-                        <img src="img/Asia/Asia Central/Kazajistán.jpg" width="100" height="100" alt="Kazajistán" class="img10">
-                        <img src="img/Asia/Asia Occidental/Emiratos Árabes3.jpg" width="100" height="100" alt="Emiratos Árabes" class="img11">
-                        <img src="img/Asia/Asia Oriental/Japón2.jpg" width="100" height="100" alt="Japón" class="img12">
-                    </div>    
-                    <div class="europa">
-                        <h4>Europa</h4>
-                        <img src="img/Europa/Europa atlántica/Bélgica3.jpg" width="100" height="100" alt="Bélgica" class="img13">
-                        <img src="img/Europa/Europa central/Hungría2.jpg" width="100" height="100" alt="Hungría" class="img14">
-                        <img src="img/Europa/Europa mediterránea/Italia3.webp" width="100" height="100" alt="Italia" class="img15">
-                    </div>    
-                    <div class="oceania">
-                        <h4>Oceanía</h4>
-                        <img src="img/Oceanía/Micronesia/Las Marianas.webp" width="100" height="100" alt="Las Marianas" class="img16">
-                        <img src="img/Oceanía/Polinesia/Tahití2.jpg" width="100" height="100" alt="Tahití" class="img17">
-                        <img src="img/Oceanía/Región australiana/Australia.webp" width="100" height="100" alt="Australia" class="img18">
-                    </div>    
+                        <div class="regionPampeana">
+                            <h4>Región Pampeana</h4>
+                            <img src="img/Región Pampeana/Buenos Aires/Bs As1.webp" alt="Buenos Aires" class="img10">
+                            <img src="img/Región Pampeana/Buenos Aires/Bs As4.webp" alt="Buenos Aires4" class="img11">
+                            <img src="img/Región Pampeana/La Pampa/La Pampa1.webp" alt="La Pampa" class="img12">
+                        </div>
+                    </div>
+                    
+                    <div class="sierras-regionMetropolitana">
+                        <div class="sierras">
+                            <h4>Sierras</h4>
+                            <img src="img/Sierras/Córdoba/Córdoba2.webp" alt="Córdoba2" class="img13">
+                            <img src="img/Sierras/Córdoba/Córdoba4.webp" alt="Córdoba4" class="img14">
+                            <img src="img/Sierras/Córdoba/Córdoba6.webp" alt="Córdoba6" class="img15">
+                        </div>    
+                        <div class="regionMetropolitana">
+                            <h4>Región Metropolitana</h4>
+                            <img src="img/Región Metropolitana/CABA/CABA4.webp" alt="CABA4" class="img16">
+                            <img src="img/Región Metropolitana/CABA/CABA1.webp" alt="CABA1" class="img17">
+                            <img src="img/Región Metropolitana/CABA/CABA6.webp" alt="CABA6" class="img18">
+                        </div> 
+                    </div>
+                    
+                    <div class="patagonia-extremoAustral">
+                        <div class="patagonia">
+                            <h4>Patagonia</h4>
+                            <img src="img/Patagonia/Chubut/Chubut5.webp" alt="Chubut" class="img19">
+                            <img src="img/Patagonia/Río Negro/Río Negro6.webp" alt="Río Negro" class="img20">
+                            <img src="img/Patagonia/Santa Cruz/Santa Cruz3.webp" alt="Santa Cruz" class="img21">
+                        </div>   
+                        <div class="extremoAustral">
+                            <h4>Extremo austral</h4>
+                            <img src="img/Extremo austral/Antártida e Islas del Atlántico Sur/Antártida2.webp" alt="Antártida" class="img22">
+                            <img src="img/Extremo austral/Tierra del Fuego/Tierra del Fuego4.webp" alt="Tierra del Fuego4" class="img23">
+                            <img src="img/Extremo austral/Tierra del Fuego/Tierra del Fuego5.webp" alt="Tierra del Fuego5" class="img24">
+                        </div>   
+                    </div>
+                    
                     
                 </section>    
             </section>
         </div>   
 
     </main>
-
-
-    <!-- Sección Gourmet -->
-    <section id="gourmet">
-
-        <div class="gourmet">
-
-            <div>
-                <h3>Sección Gourmet</h3>
-            </div>   
-
-            <div class="imgGourmet">
-                <img src="img/Gourmet/Gourmet (vaca-al-vino-tinto).webp" width="300" height="200" alt="Vaca al vino tinto">
-                <img src="img/Gourmet/Gourmet2(pizza-gourmet).jpg" width="300" height="200" alt="Pizza gourmet">
-                <img src="img/Gourmet/Gourmet3(Ensalada-gourmet).webp" width="300" height="200" alt="Ensalada gourmet">
-                <img src="img/Gourmet/Gourmet4(Cocina gourmet mexicana).jpeg" width="300" height="200" alt="Cocina gourmet mexicana">
-                <img src="img/Gourmet/Gourmet5(Scallops).jpg" width="300" height="200"  alt="Escalopes">
-                <img src="img/Gourmet/Gourmet6(carne en cilindros y cuadrados de polenta - comida francesa).jpg" width="300" height="200" alt="Carne roja y polenta">
-                <img src="img/Gourmet/Gourmet7(fideos).jpeg" width="300" height="200" alt="Fideos">
-                <img src="img/Gourmet/Gourmet8(hummus-alubias).jpg" width="300" height="200" alt="Humus alubias">
-            </div>
- 
-        </div>
-
-    </section>
-
-    <!-- Sección Ecoturismo -->
-    <section id="ecoturismo">
-
-        <div class="ecoturismo">
-
-            <div>
-                <h3>Sección Ecoturismo</h3>
-            </div>            
-
-            <div class="imgEcoturismo">
-                <img src="img/Ecoturismo/ecoturismo1.jfif" width="300" height="200" alt="Ecoturismo">
-                <img src="img/Ecoturismo/ecoturismo2.webp" width="300" height="200" alt="Ecoturismo">
-                <img src="img/Ecoturismo/ecoturismo3.webp" width="300" height="200" alt="Ecoturismo">
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Sección Cruceros -->
-    <section id="cruceros">
-
-        <div class="cruceros">
-
-            <div>
-                <h3>Sección Cruceros</h3>
-            </div>
-
-            <div class="imgCruceros">
-                <img src="img/Cruceros/Cruceros.jpg" width="300" height="200" alt="Cruceros imagen 1">
-                <img src="img/Cruceros/Cruceros2.jpg" width="300" height="200" alt="Cruceros imagen 2">
-                <img src="img/Cruceros/Cruceros3.webp" width="300" height="200" alt="Cruceros imagen 3">
-                <img src="img/Cruceros/Cruceros4.avif" width="300" height="200" alt="Cruceros imagen 4">
-                <img src="img/Cruceros/Cruceros5.webp" width="300" height="200" alt="Cruceros imagen 5">
-                <img src="img/Cruceros/Cruceros6.jfif" width="300" height="200" alt="Cruceros imagen 6">
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Sección Polos -->
-    <section id="polos">
-
-        <div class="polos">
-
-            <div>
-                <h3>Sección Polos</h3>
-            </div>            
-
-            <div class="imgPolos">
-                <img src="img/Antártida-Ártico/Antártida.jpg" width="300" height="200" alt="Antártida imagen 1">
-                <img src="img/Antártida-Ártico/Antártida2.jpg" width="300" height="200" alt="Antártida imagen 2">
-                <img src="img/Antártida-Ártico/Antártida3.jpg" width="300" height="200" alt="Antártida imagen 3">
-                <img src="img/Antártida-Ártico/Antártida4.webp" width="300" height="200" alt="Antártida imagen 4">
-                <img src="img/Antártida-Ártico/Antártida5.avif" width="300" height="200" alt="Antártida imagen 5">
-                <img src="img/Antártida-Ártico/Ártico.jpg" width="300" height="200" alt="Ártico imagen 1">
-                <img src="img/Antártida-Ártico/Ártico2.jpg" width="300" height="200" alt="Ártico imagen 2">
-                <img src="img/Antártida-Ártico/Ártico3.jpeg" width="300" height="200" alt="Ártico imagen 3">
-                <img src="img/Antártida-Ártico/Ártico4.jpg" width="300" height="200" alt="Ártico imagen 4">
-                <img src="img/Antártida-Ártico/Ártico5.jpg" width="300" height="200" alt="Ártico imagen 5">
-                <img src="img/Antártida-Ártico/Ártico6.avif" width="300" height="200" alt="Ártico imagen 6">
-            </div>
-
-        </div>
-
-    </section>
 
     <footer>
 

@@ -40,12 +40,13 @@
     border-radius: 30% 30% 30% 30%;  /*Redondea dos vértices del logo*/
     box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw rgba(111, 83, 236, 0.8); /*Agrega sombra alrededor*/
     margin-left: 10vw;
+    margin-top: 0.5vw;
 }
 
 /* Estilo en el encabezado header:*/
 header {
     background: linear-gradient(to left, rgba(77, 103, 121, 0.2),rgba(250, 249, 249, 0.4)); /*Degradado de colores*/
-    height: 11vh; /*Altura*/
+    height: 9vh; /*Altura*/
     font-size: 1.3vw; /*Tamaño de texto*/
     text-align:right;  /*Alinear texto*/
     border-radius: 0% 0% 0% 0%; /*Redondea un vértice del logo(un extremo)*/
@@ -68,13 +69,13 @@ header {
 --------------------------------------------------------------*/
 
 .contenedor {
-    padding-top: 15vh;
+    padding-top: 10vh;
     display: flex;
     flex-direction:row; /* pone las dos secciones en columnas */
     justify-content:space-between; /* Centra las columnas horizontalmente */
     align-items: center; /* Centra las columnas verticalmente */
-    text-align: center;
-    padding: 2vw;
+    text-align: center; /* Centra el texto */
+    padding: 1vw; /* crea espacio dentro del elemento (relleno) */
 }
 
 ul, ol {
@@ -82,13 +83,8 @@ ul, ol {
 }
 
 .seccion1 {
-    flex-grow: 1;
-    margin: 1vw;
-}
-
-.seccion2 {
     flex-grow: 2;
-    margin: 5vw;
+    margin: 3.5vw;
 }
 
 #menu {
@@ -106,8 +102,8 @@ ul, ol {
     font-weight: bold;
     font-size: 2vw;
     background-color: #e6dfe4;
-    padding: 3vh;
-    margin-top: 2vh;
+    padding: 2vh;
+    margin-top: 1vh;
     border-radius: 30%;
     box-shadow: 0.2vw 0.2vw 0.2vw 0.2vw rgba(111, 83, 236, 0.8); /*Agrega sombra alrededor*/
 }
@@ -121,28 +117,64 @@ ul, ol {
     height: auto;/*Altura*/
     border-radius: 15% 15% 15% 15%;  /*Redondea dos vértices del logo*/
     box-shadow: 0.4vw 0.4vw 0.1vw 0.1vw rgba(127, 108, 209, 0.8); /*Agrega sombra alrededor*/
-    padding: 4vh;
+    padding: 1.5vh;
 }
 
 .buscador {
     display: flex;
     justify-content:space-between; /* Centra las columnas horizontalmente */
     align-items: center; /* Centra las columnas verticalmente */
-    text-align: center;
+    text-align: center; /* Centra el texto */
+}
+
+select optgroup[label="------------- Noroeste -------------"] option {
+    background-color: #eaf6f1;
+}
+
+select optgroup[label="--------------- Cuyo ---------------"] option {
+    background-color: #f5f9eb;
+}
+
+select optgroup[label="-------------- Litoral --------------"] option {
+    background-color: #fdecfa;
+}
+
+select optgroup[label="------------ Patagonia ------------"] option {
+    background-color: #f6f4fe;
+}
+
+select optgroup[label="----- Región Metropolitana -----"] option {
+    background-color: #faf2ea;
+}
+
+select optgroup[label="-------- Región Pampeana ------"] option {
+    background-color: #f9edfd;
+}
+
+select optgroup[label="-------------- Sierras --------------"] option {
+    background-color: #f0f5e3;
+}
+
+select optgroup[label="--------- Extremo austral --------"] option {
+    background-color: #fce5e6;
 }
 
 #destino {
+    font-size: 2vh;
     margin: 1vw;
-    border-radius: 50%;
+    border-radius: 25%;
     padding: 1vh;
     font-style: italic;
+    text-align: center; /* Centra el texto */
 }
 
 #origen {
+    font-size: 2vh;
     margin: 1vw;
-    border-radius: 50%;
+    border-radius: 25%;
     padding: 1vh;
     font-style: italic;
+    text-align: center; /* Centra el texto */
 }
 
 #fechasIF {
@@ -153,13 +185,19 @@ ul, ol {
 
 #fechaInicio {
     margin-right: 2vw;
+    text-align: center; /* Centra el texto */
+}
+
+#fechaFin {
+    margin-right: 2vw;
+    text-align: center; /* Centra el texto */
 }
 
 #buscar {
     font-size: 3vh;
     margin-right: 2vw;
-    border-radius: 10%;
-    padding: 0.9vh;
+    border-radius: 20%;
+    padding: 1.2vh;
     background-color: rgb(68, 4, 128);
     color: antiquewhite;
     font-weight: bold;
@@ -167,74 +205,63 @@ ul, ol {
     border-width: 0.8vh;
 }
 
-.seccionContinentes {
+.seccionRegiones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 7vw;
-    margin-top: 5vh;;
+    gap: 6.5vw;
+    margin-top: 5vh;
 }
 
-.africa
-.america
-.asia
-.europa
-.oceania {
+.cuyo-litoral
+.noroeste-regionPampeana
+.sierras-regionMetropolitana
+.patagonia-extremoAustral {
     flex-basis: 20%;
     margin: 2vw;
     background-color: black;
     align-items: center;
 }
 
-.america {
+.cuyo-litoral {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20vh;
+    gap: 17vh;
     padding: 3vh;
 }
 
-
-/*--------------------------------------------------------------
-# GOURMET
---------------------------------------------------------------*/
-
-.gourmet {
-    padding-top: 20vh;
-    margin: 5vw;
+.noroeste-regionPampeana {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 17vh;
+    padding: 3vh;
 }
 
-
-/*--------------------------------------------------------------
-# ECOTURISMO
---------------------------------------------------------------*/
-
-.ecoturismo {
-    padding-top: 20vh;
-    margin: 5vw;
+.sierras-regionMetropolitana {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 17vh;
+    padding: 3vh;
 }
 
-
-/*--------------------------------------------------------------
-# CRUCEROS
---------------------------------------------------------------*/
-
-.cruceros {
-    padding-top: 20vh;
-    margin: 5vw;
-}
-
-
-/*--------------------------------------------------------------
-# POLOS
---------------------------------------------------------------*/
-
-.polos {
-    padding-top: 20vh;
-    margin: 5vw;
+.patagonia-extremoAustral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 17vh;
+    padding: 3vh;
 }
 
 

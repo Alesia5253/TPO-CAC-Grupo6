@@ -1,0 +1,1414 @@
+openapi: 3.0.3
+info:
+  title: Aviapages Flight Time & Route Calculator API
+  version: 2.1.2 (2.1.2)
+  description: Aviapages Calculator is flight time, route and fuel estimation tool.
+    See Charter Directories, Aviation Weather, NOTAM, Availability and Schedule APIs
+    <a href="https://dir.aviapages.com/api/documentation/">here</a>.
+  contact:
+    name: Support
+    email: support@aviapages.com
+paths:
+  /api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      summary: OpenApi3 schema for this API
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      tags:
+      - schema
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /flight_calculator/:
+    post:
+      operationId: flight_calculator_run
+      description: Endpoint to retrieve flight time, flight route & fuel usage.
+      summary: Flight Time & Route Calculator
+      tags:
+      - flight_calculator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightCalculatorRequest'
+            examples:
+              FlightTimeBasic:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: EGSS
+                  aircraft: Embraer Legacy 650
+                  pax: 2
+                  airway_time: true
+                summary: Flight time basic
+              FlightTimeBasicWithAircraftTailNumber:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: EGSS
+                  aircraft: Challenger 850
+                  aircraft_tail_number: OH-WIX
+                  pax: 2
+                  airway_time: true
+                summary: Flight time basic with aircraft tail number
+              TimeDistanceFuelIFR:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: EGSS
+                  aircraft: Embraer Legacy 650
+                  pax: 2
+                  airway_time: true
+                  airway_fuel: true
+                  airway_distance: true
+                  ifr_route: true
+                summary: Time, distance, fuel & IFR
+              ArrivalTime:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: EGSS
+                  aircraft: Embraer Legacy 650
+                  pax: 2
+                  departure_datetime: 2020-10-28T12:00
+                  airway_time: true
+                  arrival_datetime: true
+                summary: Arrival time
+              AVGSpeedEstimateOfFlightTime:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: EGSS
+                  aircraft: Embraer Legacy 650
+                  average_speed_time: true
+                summary: AVG speed estimate of flight time
+              Time&FuelWithWindImpact:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: EGSS
+                  aircraft: Embraer Legacy 650
+                  pax: 2
+                  airway_time_weather_impacted: true
+                  airway_fuel_weather_impacted: true
+                summary: Time & fuel with wind impact
+              DirectFlightByCoords:
+                value:
+                  departure_airport: 39.78 -104.53
+                  arrival_airport: 8.45 48.56
+                  aircraft: Global 7500
+                  great_circle_time: true
+                  great_circle_route: true
+                summary: Direct flight by coords
+              AllAvailableFeatures:
+                value:
+                  departure_airport: EVRA
+                  arrival_airport: LUKK
+                  aircraft: Embraer Legacy 650
+                  departure_datetime: 2020-12-28T12:00
+                  pax: 2
+                  arrival_datetime: true
+                  great_circle_route: true
+                  great_circle_distance: true
+                  great_circle_time: true
+                  great_circle_fuel: true
+                  average_speed_time: true
+                  airway_route: true
+                  airway_time: true
+                  airway_distance: true
+                  airway_time_weather_impacted: true
+                  airway_fuel_weather_impacted: true
+                  airway_fuel: true
+                  airway_fuel_weather_impacted_detailed: true
+                  airway_fuel_detailed: true
+                  great_circle_fuel_detailed: true
+                  advise_techstops: true
+                  ifr_route: true
+                  avoid_countries:
+                  - Belarus
+                  - Ukraine
+                  avoid_firs:
+                  - LCCC
+                  - XX02
+                  etops: ETOPS60
+                  tag: comment
+                  aircraft_degradation: 2.3
+                  aircraft_oew: 10000
+                  aircraft_mtow: 20000
+                  aircraft_zfw: 15000
+                  aircraft_max_fuel: 10000
+                  aircraft_taxi_fuel: 10
+                  aircraft_alternate_fuel: 10
+                  aircraft_holding_fuel: 10
+                  aircraft_contingency_fuel: 10
+                  aircraft_extra_fuel: 10
+                  aircraft_custom_payload: 200
+                  great_circle_carbon_emissions: true
+                  airway_carbon_emissions: true
+                  airway_carbon_emissions_weather_impacted: true
+                summary: All available features
+        required: true
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightCalculatorResponse'
+              examples:
+                FlightTimeBasicWithAircraftTailNumber:
+                  value:
+                    time:
+                      airway: 83
+                    airport:
+                      arrival_airport: EGSS
+                      departure_airport: EVRA
+                    aircraft: Embraer Legacy 650
+                  summary: Flight time basic with aircraft tail number
+                FlightTimeBasic:
+                  value:
+                    time:
+                      airway: 159
+                    airport:
+                      arrival_airport: EGSS
+                      departure_airport: EVRA
+                    aircraft: Challenger 850
+                  summary: Flight time basic
+                Time,Distance,Fuel&IFR:
+                  value:
+                    fuel:
+                      airway: 1095
+                    time:
+                      airway: 83
+                    route:
+                      ifr_route:
+                      - EVRA
+                      - SORES
+                      - N123A
+                      - SAKTA
+                      - N123A
+                      - ALMIK
+                      - N123A
+                      - IGORO
+                      - N123A
+                      - ATMED
+                      - N123A
+                      - SONUN
+                      - N123A
+                      - SUDER
+                      - N123A
+                      - BOMGI
+                      - N123A
+                      - TU
+                      - N123A
+                      - BAKNA
+                      - EGSS
+                    airport:
+                      arrival_airport: EGSS
+                      departure_airport: EVRA
+                    aircraft: Embraer Legacy 650
+                    distance:
+                      airway: 849.07
+                  summary: Time, distance, fuel & IFR
+                ArrivalTime:
+                  value:
+                    time:
+                      average_speed: 62
+                    airport:
+                      arrival_airport: EGSS
+                      departure_airport: EVRA
+                    aircraft: Embraer Legacy 650
+                  summary: Arrival time
+                Time&FuelWithWindImpact:
+                  value:
+                    fuel:
+                      airway_weather_impacted: 1077
+                    time:
+                      airway_weather_impacted: 81
+                    airport:
+                      arrival_airport: EGSS
+                      departure_airport: EVRA
+                    aircraft: Embraer Legacy 650
+                  summary: Time & fuel with wind impact
+                DirectFlightByCoords:
+                  value:
+                    time:
+                      great_circle: null
+                    route:
+                      great_circle:
+                      - la: 39.779998779296875
+                        lo: -104.52999877929688
+                      - la: 40.8962
+                        lo: -103.5596
+                      - la: 42.0038
+                        lo: -102.5562
+                      - la: 43.1021
+                        lo: -101.5175
+                      - la: 44.1904
+                        lo: -100.4412
+                      - la: 45.268
+                        lo: -99.3247
+                      - la: 46.334
+                        lo: -98.1654
+                      - la: 47.3876
+                        lo: -96.9604
+                      - la: 48.4278
+                        lo: -95.7068
+                      - la: 49.4536
+                        lo: -94.4013
+                      - la: 50.4639
+                        lo: -93.0406
+                      - la: 51.4574
+                        lo: -91.6211
+                      - la: 52.4328
+                        lo: -90.1392
+                      - la: 53.3887
+                        lo: -88.5911
+                      - la: 54.3234
+                        lo: -86.9728
+                      - la: 55.2353
+                        lo: -85.2804
+                      - la: 56.1225
+                        lo: -83.5099
+                      - la: 56.983
+                        lo: -81.6572
+                      - la: 57.8147
+                        lo: -79.7186
+                      - la: 58.6153
+                        lo: -77.6904
+                      - la: 59.3823
+                        lo: -75.5693
+                      - la: 60.1132
+                        lo: -73.3526
+                      - la: 60.8052
+                        lo: -71.0382
+                      - la: 61.4556
+                        lo: -68.6248
+                      - la: 62.0614
+                        lo: -66.1123
+                      - la: 62.6197
+                        lo: -63.5019
+                      - la: 63.1275
+                        lo: -60.7962
+                      - la: 63.5819
+                        lo: -57.9994
+                      - la: 63.9801
+                        lo: -55.1177
+                      - la: 64.3195
+                        lo: -52.1592
+                      - la: 64.5977
+                        lo: -49.1337
+                      - la: 64.8128
+                        lo: -46.053
+                      - la: 64.963
+                        lo: -42.9303
+                      - la: 65.0473
+                        lo: -39.7801
+                      - la: 65.0649
+                        lo: -36.6179
+                      - la: 65.0157
+                        lo: -33.4594
+                      - la: 64.9001
+                        lo: -30.3203
+                      - la: 64.7191
+                        lo: -27.2157
+                      - la: 64.474
+                        lo: -24.1595
+                      - la: 64.1666
+                        lo: -21.1643
+                      - la: 63.7991
+                        lo: -18.241
+                      - la: 63.374
+                        lo: -15.3986
+                      - la: 62.894
+                        lo: -12.6442
+                      - la: 62.362
+                        lo: -9.9831
+                      - la: 61.7809
+                        lo: -7.4187
+                      - la: 61.1537
+                        lo: -4.953
+                      - la: 60.4833
+                        lo: -2.5865
+                      - la: 59.7726
+                        lo: -0.3185
+                      - la: 59.0243
+                        lo: 1.8527
+                      - la: 58.2411
+                        lo: 3.9295
+                      - la: 57.4255
+                        lo: 5.915
+                      - la: 56.5799
+                        lo: 7.8125
+                      - la: 55.7065
+                        lo: 9.6259
+                      - la: 54.8074
+                        lo: 11.359
+                      - la: 53.8845
+                        lo: 13.0158
+                      - la: 52.9396
+                        lo: 14.6004
+                      - la: 51.9743
+                        lo: 16.1167
+                      - la: 50.9901
+                        lo: 17.5686
+                      - la: 49.9885
+                        lo: 18.9599
+                      - la: 48.9707
+                        lo: 20.2941
+                      - la: 47.9379
+                        lo: 21.5747
+                      - la: 46.8912
+                        lo: 22.8049
+                      - la: 45.8316
+                        lo: 23.9879
+                      - la: 44.76
+                        lo: 25.1266
+                      - la: 43.6773
+                        lo: 26.2238
+                      - la: 42.5842
+                        lo: 27.282
+                      - la: 41.4815
+                        lo: 28.3037
+                      - la: 40.3698
+                        lo: 29.2912
+                      - la: 39.2497
+                        lo: 30.2467
+                      - la: 38.1218
+                        lo: 31.1721
+                      - la: 36.9866
+                        lo: 32.0694
+                      - la: 35.8446
+                        lo: 32.9403
+                      - la: 34.6962
+                        lo: 33.7866
+                      - la: 33.5419
+                        lo: 34.6097
+                      - la: 32.3821
+                        lo: 35.4112
+                      - la: 31.2171
+                        lo: 36.1924
+                      - la: 30.0472
+                        lo: 36.9546
+                      - la: 28.8728
+                        lo: 37.6991
+                      - la: 27.6942
+                        lo: 38.427
+                      - la: 26.5116
+                        lo: 39.1394
+                      - la: 25.3254
+                        lo: 39.8374
+                      - la: 24.1357
+                        lo: 40.5219
+                      - la: 22.9428
+                        lo: 41.1938
+                      - la: 21.747
+                        lo: 41.854
+                      - la: 20.5484
+                        lo: 42.5034
+                      - la: 19.3472
+                        lo: 43.1427
+                      - la: 18.1437
+                        lo: 43.7727
+                      - la: 16.938
+                        lo: 44.3941
+                      - la: 15.7303
+                        lo: 45.0077
+                      - la: 14.5207
+                        lo: 45.614
+                      - la: 13.3095
+                        lo: 46.2138
+                      - la: 12.0967
+                        lo: 46.8077
+                      - la: 10.8826
+                        lo: 47.3962
+                      - la: 9.6673
+                        lo: 47.98
+                      - la: 8.449999809265137
+                        lo: 48.560001373291016
+                    airway_carbon_emissions: 6047
+                    great_circle_carbon_emissions: 5217
+                    airway_carbon_emissions_weather_impacted: 6087
+                    errors:
+                    - code: 1001
+                      message: This aircraft profile is under construction. Please
+                        try another aircraft
+                    airport:
+                      arrival_airport: null
+                      departure_airport: null
+                    aircraft: Global 7500
+                  summary: Direct flight by coords
+                FullResponse:
+                  value:
+                    fuel:
+                      airway: 1920
+                      airway_block: 1960
+                      great_circle: 1656
+                      airway_detailed:
+                      - weight: 16949.634
+                        distance: 0
+                        duration: 5
+                        fuel_used: 5.115
+                        operation: taxi
+                        final_altitude: 0
+                      - weight: 16944.519
+                        distance: 174.088
+                        duration: 16
+                        fuel_used: 425.045
+                        operation: climb
+                        final_altitude: 11887
+                      - weight: 16519.474
+                        distance: 19.268
+                        duration: 2.329
+                        fuel_used: 40.638
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 16478.836
+                        distance: 100
+                        duration: 7.184
+                        fuel_used: 112.498
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 16366.338
+                        distance: 800
+                        duration: 57.216
+                        fuel_used: 898.224
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 15468.111
+                        distance: 300
+                        duration: 21.36
+                        fuel_used: 336.018
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 15132.096
+                        distance: 162.976
+                        duration: 15
+                        fuel_used: 96.981
+                        operation: descent
+                        final_altitude: 0
+                      - weight: 15035.115
+                        distance: 0
+                        duration: 5
+                        fuel_used: 5.115
+                        operation: taxi
+                        final_altitude: 0
+                      great_circle_block: 1696
+                      great_circle_detailed:
+                      - weight: 16686.039
+                        distance: 0
+                        duration: 5
+                        fuel_used: 5.115
+                        operation: taxi
+                        final_altitude: 0
+                      - weight: 16680.924
+                        distance: 129.64
+                        duration: 12
+                        fuel_used: 348.017
+                        operation: climb
+                        final_altitude: 10668
+                      - weight: 16332.907
+                        distance: 44.045
+                        duration: 5.324
+                        fuel_used: 92.897
+                        operation: cruise
+                        final_altitude: 10668
+                      - weight: 16240.011
+                        distance: 600
+                        duration: 42.168
+                        fuel_used: 790.14
+                        operation: cruise
+                        final_altitude: 10668
+                      - weight: 15449.875
+                        distance: 250
+                        duration: 17.57
+                        fuel_used: 324.74
+                        operation: cruise
+                        final_altitude: 10668
+                      - weight: 15125.135
+                        distance: 138.9
+                        duration: 13
+                        fuel_used: 90.02
+                        operation: descent
+                        final_altitude: 0
+                      - weight: 15035.115
+                        distance: 0
+                        duration: 5
+                        fuel_used: 5.115
+                        operation: taxi
+                        final_altitude: 0
+                      airway_weather_impacted: 1932
+                      airway_weather_impacted_block: 1972
+                      airway_weather_impacted_detailed:
+                      - weight: 16962.455
+                        distance: 0
+                        duration: 5
+                        fuel_used: 5.115
+                        operation: taxi
+                        final_altitude: 0
+                      - weight: 16957.34
+                        distance: 174.088
+                        duration: 16
+                        fuel_used: 425.045
+                        operation: climb
+                        final_altitude: 11887
+                      - weight: 16532.296
+                        distance: 19.268
+                        duration: 2.329
+                        fuel_used: 40.638
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 16491.657
+                        distance: 150
+                        duration: 9.919
+                        fuel_used: 155.354
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 16336.303
+                        distance: 800
+                        duration: 57.976
+                        fuel_used: 910.176
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 15426.126
+                        distance: 250
+                        duration: 18.692
+                        fuel_used: 294.032
+                        operation: cruise
+                        final_altitude: 11887
+                      - weight: 15132.096
+                        distance: 162.976
+                        duration: 15
+                        fuel_used: 96.981
+                        operation: descent
+                        final_altitude: 0
+                      - weight: 15035.115
+                        distance: 0
+                        duration: 5
+                        fuel_used: 5.115
+                        operation: taxi
+                        final_altitude: 0
+                    time:
+                      airway: 129
+                      great_circle: 100
+                      average_speed: 87
+                      departure_local: '2020-12-28T12:00:00'
+                      arrival_local_airway: '2020-12-28T14:09:00'
+                      airway_weather_impacted: 130
+                      arrival_local_great_circle: '2020-12-28T14:09:00'
+                      arrival_local_average_speed: '2020-12-28T12:01:26.585617'
+                      arrival_local_airway_weather_impacted: '2020-12-28T14:10:00'
+                    route:
+                      airway:
+                      - la: 56.9236
+                        lo: 23.9711
+                      - la: 56.3714
+                        lo: 23.7556
+                      - la: 55.4383
+                        lo: 23.41
+                      - la: 54.8697
+                        lo: 23.2081
+                      - la: 54.3075
+                        lo: 23.0592
+                      - la: 54.0697
+                        lo: 22.9003
+                      - la: 53.7769
+                        lo: 22.7892
+                      - la: 53.2569
+                        lo: 22.5956
+                      - la: 52.7711
+                        lo: 22.4189
+                      - la: 52.4258
+                        lo: 22.2958
+                      - la: 52.1553
+                        lo: 22.2008
+                      - la: 51.8092
+                        lo: 22.0986
+                      - la: 51.6106
+                        lo: 22.0408
+                      - la: 51.4167
+                        lo: 21.9847
+                      - la: 51.1489
+                        lo: 21.9106
+                      - la: 51.0428
+                        lo: 21.8808
+                      - la: 50.6167
+                        lo: 21.7625
+                      - la: 49.4128
+                        lo: 21.4392
+                      - la: 48.6045
+                        lo: 21.9487
+                      - la: 47.7939
+                        lo: 22.4422
+                      - la: 47.1203
+                        lo: 25.4786
+                      - la: 46.9778
+                        lo: 26.0536
+                      - la: 46.8761
+                        lo: 27.2033
+                      - la: 46.8397
+                        lo: 27.5842
+                      - la: 46.8256
+                        lo: 27.7289
+                      - la: 46.9277
+                        lo: 28.9309
+                      ifr_route:
+                      - EVRA
+                      - GUNTA
+                      - T884
+                      - INBOV
+                      - T884
+                      - VAKAL
+                      - T884
+                      - BOKSU
+                      - T888
+                      - SUWGI
+                      - T888
+                      - NORNO
+                      - T888
+                      - UNPEG
+                      - T888
+                      - BULEP
+                      - T888
+                      - XESNA
+                      - T888
+                      - GERVI
+                      - T888
+                      - VAXUR
+                      - T888
+                      - SUMAM
+                      - T888
+                      - EGLON
+                      - T888
+                      - VENES
+                      - T888
+                      - LODBO
+                      - T888
+                      - OBOSO
+                      - T888
+                      - PODAN
+                      - DCT
+                      - 49N022E
+                      - DCT
+                      - KARIL
+                      - T277
+                      - BUKUR
+                      - T277
+                      - UDSIG
+                      - Q18
+                      - TEVSA
+                      - Q18
+                      - ULGAP
+                      - Q18
+                      - PIRIG
+                      - LUKK
+                      great_circle:
+                      - la: 56.9236
+                        lo: 23.9711
+                      - la: 55.8251
+                        lo: 24.6436
+                      - la: 54.723
+                        lo: 25.2792
+                      - la: 53.6175
+                        lo: 25.8811
+                      - la: 52.5089
+                        lo: 26.4523
+                      - la: 51.3975
+                        lo: 26.9955
+                      - la: 50.2835
+                        lo: 27.5129
+                      - la: 49.1671
+                        lo: 28.0067
+                      - la: 48.0484
+                        lo: 28.4788
+                      - la: 46.9277
+                        lo: 28.9309
+                    airport:
+                      arrival_airport: LUKK
+                      departure_airport: EVRA
+                    aircraft: Embraer Legacy 650
+                    distance:
+                      airway: 1556.332
+                      great_circle: 1162.585
+                  summary: Full Response
+                  description: All fields response example
+          description: ''
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+          description: ''
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottleError'
+              examples:
+                ThrottledMonthlyAPILimits:
+                  value:
+                    detail: Request was throttled. Monthly API limit exceeded
+                  summary: Throttled monthly API limits
+                ThrottledLimitsPeerMinute:
+                  value:
+                    detail: Request was throttled. Expected available in 60 seconds.
+                  summary: Throttled limits peer minute
+          description: ''
+components:
+  schemas:
+    Coordinates:
+      type: object
+      properties:
+        lo:
+          type: number
+          format: double
+          maximum: 180
+          minimum: -180
+        la:
+          type: number
+          format: double
+          maximum: 90
+          minimum: -90
+      required:
+      - la
+      - lo
+    FlightCalculatorRequest:
+      type: object
+      properties:
+        departure_airport:
+          type: string
+          description: |-
+            Departure airport ICAO code / IATA code / Local identifier or coordinates.
+            e.g. "LSGG", "RIX", "39.7841944444 -104.537638889"
+          maxLength: 100
+          minLength: 3
+        arrival_airport:
+          type: string
+          description: |-
+            Arrival airport ICAO code / IATA code / Local identifier or coordinates.
+            e.g. "KJFK", "BCA", "8.45991666667 48.5683611111
+          maxLength: 100
+          minLength: 3
+        aircraft:
+          type: string
+          description: |-
+            Aircraft profile name / ICAO code / type. Profile name is preferable.
+            e.g. "HondaJet (IASA regulations)", "CL60", "Global 6000"
+          maxLength: 100
+          minLength: 3
+        aircraft_tail_number:
+          type: string
+          description: |-
+            Aircraft tail number. Helps find exact aircraft profile.
+            Overrides 'aircraft' parameter if found in Aviapages database.
+          maxLength: 10
+          minLength: 3
+        departure_datetime:
+          type: string
+          format: date-time
+          description: |-
+            Local time of departure in format "YYYY-MM-DDThh:mm". Default: current UTC datetime.
+            e.g. "2020-10-28T12:00"
+        pax:
+          type: integer
+          maximum: 999
+          minimum: 0
+          default: 2
+          description: Number of passengers.
+        aircraft_custom_payload:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom payload parameter, kg. Overrides pax parameter.
+        arrival_datetime:
+          type: boolean
+          default: false
+          description: |-
+            Display local arrival date & time depending on time calculation methods selected from above
+            ("airway_time", "airway_time_weather_impacted", "great_circle_time", "average_speed_time" will return
+            "arrival_local_airway", "arrival_local_airway_weather_impacted", "arrival_local_great_circle",
+            "arrival_local_average_speed" respectively)
+        great_circle_route:
+          type: boolean
+          default: false
+          description: Calculate great circle route (shortest distance) as an array
+            of coordinates between airports
+        great_circle_carbon_emissions:
+          type: boolean
+          default: false
+          description: Calculate carbon dioxide emissions via great circle using aircraft
+            performance model, kg
+        airway_carbon_emissions:
+          type: boolean
+          default: false
+          description: Calculate carbon dioxide emissions via airways using aircraft
+            performance model, kg
+        airway_carbon_emissions_weather_impacted:
+          type: boolean
+          default: false
+          description: |-
+            Calculate carbon dioxide emissions via airways using aircraft performance model
+            with historical average wind, kg
+        great_circle_distance:
+          type: boolean
+          default: false
+          description: Calculate distance between airports via great circle (shortest
+            distance).
+        great_circle_time:
+          type: boolean
+          default: false
+          description: Calculate flight time via great circle (shortest distance)
+            using aircraft performance model.
+        great_circle_fuel:
+          type: boolean
+          default: false
+          description: Calculate trip and block fuel via great circle using aircraft
+            performance model.
+        average_speed_time:
+          type: boolean
+          default: false
+          description: |-
+            Calculate flight time via great circle using aircraft's average speed constant.
+            Simplest and fastest calculations.
+        airway_route:
+          type: boolean
+          default: false
+          description: Calculate airway route of coordinates between airports via
+            airways.
+        airway_time:
+          type: boolean
+          default: false
+          description: Calculate flight time via airways using aircraft performance
+            model.
+        airway_distance:
+          type: boolean
+          default: false
+          description: Calculate distance between airports via airways.
+        airway_time_weather_impacted:
+          type: boolean
+          default: false
+          description: |-
+            Calculate flight time via airways using aircraft performance model with historical
+            average wind impact. This is the recommended method for most accurate result.
+        airway_fuel_weather_impacted:
+          type: boolean
+          default: false
+          description: |-
+            Calculate trip and block fuel via great circle using aircraft performance model with
+                     historical average wind.
+        airway_fuel:
+          type: boolean
+          default: false
+          description: Calculate trip and block fuel via airways using aircraft performance
+            model.
+        advise_techstops:
+          type: boolean
+          default: false
+          description: Advise optimal airports for tech stop in case direct flight
+            is not possible.
+        ifr_route:
+          type: boolean
+          default: false
+          description: Calculate route as a sequence of airways and airway points
+            used for en-route navigation.
+        airway_fuel_weather_impacted_detailed:
+          type: boolean
+          default: false
+          description: |-
+            Calculate and display detailed breakdown of fuel consumption via airways using
+                     aircraft performance model with historical average wind.
+        airway_fuel_detailed:
+          type: boolean
+          default: false
+          description: |-
+            Calculate and display detailed breakdown of fuel consumption via airways using
+                     aircraft performance model.
+        great_circle_fuel_detailed:
+          type: boolean
+          default: false
+          description: |-
+            Calculate and display detailed breakdown of fuel consumption via great circle using
+                     aircraft performance model.
+        avoid_countries:
+          type: array
+          items:
+            type: string
+            maxLength: 100
+            minLength: 2
+          description: |-
+            List of countries to avoid in airway calculations. e.g.
+            ["Iran", "Syria"], ["UKR", "BLR"] or ["BY", "UA"]
+        avoid_firs:
+          type: array
+          items:
+            type: string
+            maxLength: 4
+            minLength: 4
+          description: List of FIR to avoid in airway calculations. e.g. ["UKDV",
+            "UKBV"]
+        etops:
+          type: string
+          description: 'Use ETOPS in airway calculations. Possible values: "ETOPS90",
+            "ETOPS120", "ETOPS180".'
+          maxLength: 20
+          minLength: 7
+        tag:
+          type: string
+          description: Set custom user tag. Helpful for debugging or logging.
+          maxLength: 100
+        aircraft_degradation:
+          type: number
+          format: double
+          maximum: 100
+          minimum: 0
+          description: Aircraft's aerodynamic and flight characteristics degradation
+            factor, percent.
+        aircraft_oew:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's operating empty weight, kg.
+        aircraft_mtow:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's maximum takeoff weight, kg.
+        aircraft_zfw:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's zero fuel weight, kg.
+        aircraft_max_fuel:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's max fuel weight, kg.
+        aircraft_taxi_fuel:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's taxi fuel weight, kg.
+        aircraft_alternate_fuel:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's alternate fuel weight, kg.
+        aircraft_holding_fuel:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's holding fuel weight, kg.
+        aircraft_contingency_fuel:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's contingency fuel weight, kg.
+        aircraft_extra_fuel:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's extra fuel weight, kg.
+        aircraft_optimal_flight_level:
+          type: integer
+          maximum: 999999
+          minimum: 0
+          description: Custom aircraft's optimal flight level, m.
+        aircraft_cruise_speed:
+          type: string
+          description: Custom aircraft's cruise speed. e.g. "M0.80", "M0.85", "M0.90",
+            "M0.95", "M0.99"
+          maxLength: 100
+      required:
+      - aircraft
+      - arrival_airport
+      - departure_airport
+    FlightCalculatorResponse:
+      type: object
+      properties:
+        aircraft:
+          type: string
+          description: Aircraft profile name.
+        airport:
+          $ref: '#/components/schemas/FlightCalculatorResponseAirport'
+        distance:
+          $ref: '#/components/schemas/FlightCalculatorResponseDistance'
+        route:
+          $ref: '#/components/schemas/FlightCalculatorResponseRoute'
+        time:
+          $ref: '#/components/schemas/FlightCalculatorResponseTime'
+        fuel:
+          $ref: '#/components/schemas/FlightCalculatorResponseFuel'
+        great_circle_carbon_emissions:
+          type: integer
+          description: Carbon dioxide emissions via great circle using aircraft performance
+            model in kilograms.
+        airway_carbon_emissions:
+          type: integer
+          description: Carbon dioxide emissions via airways using aircraft performance
+            model in kilograms.
+        airway_carbon_emissions_weather_impacted:
+          type: integer
+          description: |-
+            Carbon dioxide emissions via airways using aircraft performance model with
+            historical average wind in kilograms.
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightCalculatorResponseErrors'
+          description: Sequence of error codes and messages caught during calculation.
+        warnings:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightCalculatorResponseWarnings'
+          description: Sequence of warning codes and messages caught during calculation.
+      required:
+      - aircraft
+      - airport
+      - airway_carbon_emissions
+      - airway_carbon_emissions_weather_impacted
+      - great_circle_carbon_emissions
+    FlightCalculatorResponseAirport:
+      type: object
+      properties:
+        departure:
+          type: string
+          description: Departure airport ICAO code.
+        arrival:
+          type: string
+          description: Arrival airport ICAO code.
+        techstops:
+          type: array
+          items:
+            type: string
+          description: |-
+            List of ICAO codes of recommended airports for techstop. Is displayed when "advise_techstop" is
+                     set to true and non-stop flight is not possible.
+      required:
+      - arrival
+      - departure
+      - techstops
+    FlightCalculatorResponseDistance:
+      type: object
+      properties:
+        great_circle:
+          type: number
+          format: double
+          description: distance via great_circle (shortest distance) in kilometers.
+        airway:
+          type: number
+          format: double
+          description: distance via airways in kilometers.
+      required:
+      - airway
+      - great_circle
+    FlightCalculatorResponseErrors:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error code.
+        code:
+          type: integer
+          description: Error description.
+      required:
+      - code
+      - message
+    FlightCalculatorResponseFuel:
+      type: object
+      properties:
+        airway:
+          type: integer
+          description: Total amount of used fuel consumption via airways using aircraft
+            performance model in kilograms.
+        airway_weather_impacted:
+          type: integer
+          description: |-
+            Total amount of used fuel via airways using aircraft performance model with wind impact in
+                     kilograms.
+        great_circle:
+          type: integer
+          description: |-
+            Total amount of used fuel via great circle using aircraft performance model with wind impact in
+                     kilograms.
+        great_circle_detailed:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightCalculatorResponseFuelGreatCircleDetailed'
+          description: Breakdown of fuel consumption via great circle using aircraft
+            performance model.
+        airway_detailed:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightCalculatorResponseFuelAirwayDetailed'
+          description: Breakdown of fuel consumption via airways using aircraft performance
+            model.
+        airway_weather_impacted_detailed:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightCalculatorResponseFuelairwayWeatherImpactedDetailed'
+          description: |-
+            Breakdown of fuel consumption via airways using aircraft performance model with
+                     historical average wind.
+        airway_block:
+          type: integer
+          description: Total fuel required for the flight via airways including all
+            reserved and extra fuel
+        airway_weather_impacted_block:
+          type: integer
+          description: |-
+            Total fuel required for the flight via airways with historical average wind including all
+                     reserved and extra fuel
+        great_circle_block:
+          type: integer
+          description: Total fuel required for the flight via great_circle including
+            all reserved and extra fuel
+      required:
+      - airway
+      - airway_block
+      - airway_detailed
+      - airway_weather_impacted
+      - airway_weather_impacted_block
+      - airway_weather_impacted_detailed
+      - great_circle
+      - great_circle_block
+      - great_circle_detailed
+    FlightCalculatorResponseFuelAirwayDetailed:
+      type: object
+      properties:
+        weight:
+          type: number
+          format: double
+          description: Weight of aircraft by the end of current operation, kg
+        distance:
+          type: number
+          format: double
+          description: Distance flown, km
+        duration:
+          type: number
+          format: double
+          description: Operation duration, min
+        fuel_used:
+          type: number
+          format: double
+          description: Fuel burned, kg
+        final_altitude:
+          type: integer
+          description: Altitude by the end of current operation, m
+        operation:
+          type: string
+          description: Type of the operation
+          maxLength: 100
+      required:
+      - distance
+      - duration
+      - final_altitude
+      - fuel_used
+      - operation
+      - weight
+    FlightCalculatorResponseFuelGreatCircleDetailed:
+      type: object
+      properties:
+        weight:
+          type: number
+          format: double
+          description: Weight of aircraft by the end of current operation, kg
+        distance:
+          type: number
+          format: double
+          description: Distance flown, km
+        duration:
+          type: number
+          format: double
+          description: Operation duration, min
+        fuel_used:
+          type: number
+          format: double
+          description: Fuel burned, kg
+        final_altitude:
+          type: integer
+          description: Altitude by the end of current operation, m
+        operation:
+          type: string
+          description: Type of the operation
+          maxLength: 100
+      required:
+      - distance
+      - duration
+      - final_altitude
+      - fuel_used
+      - operation
+      - weight
+    FlightCalculatorResponseFuelairwayWeatherImpactedDetailed:
+      type: object
+      properties:
+        weight:
+          type: number
+          format: double
+          description: Weight of aircraft by the end of current operation, kg
+        distance:
+          type: number
+          format: double
+          description: Distance flown, km
+        duration:
+          type: number
+          format: double
+          description: Operation duration, min
+        fuel_used:
+          type: number
+          format: double
+          description: Fuel burned, kg
+        final_altitude:
+          type: integer
+          description: Altitude by the end of current operation, m
+        operation:
+          type: string
+          description: Type of the operation
+          maxLength: 100
+      required:
+      - distance
+      - duration
+      - final_altitude
+      - fuel_used
+      - operation
+      - weight
+    FlightCalculatorResponseRoute:
+      type: object
+      properties:
+        ifr:
+          type: array
+          items:
+            type: string
+          description: |-
+            Sequence of airway points codes and airway names. Starts and end with departure and
+                     arrival airport ICAO codes respectively.
+        great_circle:
+          type: array
+          items:
+            $ref: '#/components/schemas/Coordinates'
+          description: Array of coordinates of great circle route.
+        airway:
+          type: array
+          items:
+            $ref: '#/components/schemas/Coordinates'
+          description: Array of coordinates of airway route.
+      required:
+      - airway
+      - great_circle
+      - ifr
+    FlightCalculatorResponseTime:
+      type: object
+      properties:
+        departure_local:
+          type: string
+          format: date-time
+          description: Local time at departure airport in format "YYYY-MM-DDThh:mm".
+        airway:
+          type: integer
+          description: Flight time via airways using aircraft performance model in
+            minutes.
+        arrival_local_airway:
+          type: string
+          format: date-time
+          description: |-
+            Local time at arrival airport for calculation via airways using aircraft
+                     performance model in format "YYYY-MM-DDThh:mm".
+        airway_weather_impacted:
+          type: integer
+          description: Flight time via airways using aircraft performance model with
+            wind impact in minutes.
+        arrival_local_airway_weather_impacted:
+          type: string
+          format: date-time
+          description: |-
+            Local time at arrival airport for calculation via airways using aircraft performance model with
+                     wind impact in format "YYYY-MM-DDThh:mm".
+        great_circle:
+          type: integer
+          description: Flight time via great circle using aircraft performance model
+            in minutes.
+        arrival_local_great_circle:
+          type: string
+          format: date-time
+          description: |-
+            Local time at arrival airport for calculation via great circle using aircraft performance model
+                     in format "YYYY-MM-DDThh:mm".
+        average_speed:
+          type: integer
+          description: Flight time via great circle using aircraft's average speed
+            constant (simplified) in minutes.
+        arrival_local_average_speed:
+          type: string
+          format: date-time
+          description: |-
+            Local time at arrival airport for calculation via great circle using aircraft's average speed
+                     constant in format "YYYY-MM-DDThh:mm".
+      required:
+      - airway
+      - airway_weather_impacted
+      - arrival_local_airway
+      - arrival_local_airway_weather_impacted
+      - arrival_local_average_speed
+      - arrival_local_great_circle
+      - average_speed
+      - departure_local
+      - great_circle
+    FlightCalculatorResponseWarnings:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Warning code.
+        code:
+          type: integer
+          description: Warning description.
+      required:
+      - code
+      - message
+    ThrottleError:
+      type: object
+      properties:
+        detail:
+          type: string
+          description: throttle explanation text
+      required:
+      - detail
+    ValidationError:
+      type: object
+      properties:
+        not_valid_field:
+          type: array
+          items:
+            type: string
+            description: error text
+      required:
+      - not_valid_field
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"
