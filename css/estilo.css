@@ -214,7 +214,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 400px;
-    background-color: #e2c5f3;
+    background-color: #49035b;
     z-index: 100;
     display: none;
     text-align: center;
@@ -222,6 +222,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
     border-style: double dashed;
     border-color: rgb(165, 9, 168);
     border-width: 0.35vw;
+    margin-top: 7vh;
 }
 
 .recuadro ul {
