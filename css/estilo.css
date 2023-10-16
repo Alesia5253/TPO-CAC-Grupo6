@@ -18,7 +18,8 @@
 
 /* Fondo */
 .cielo {
-    background: linear-gradient(to right, rgb(167, 167, 236), rgb(210, 172, 178));
+    background: url("../img/Backg/backg7.1.webp") repeat;
+    background-size: cover;
 }
 
 
@@ -83,7 +84,7 @@ ul, ol {
 }
 
 .seccion1 {
-    flex-grow: 2;
+    flex-grow: 1;
     margin: 3.5vw;
 }
 
@@ -203,6 +204,36 @@ select optgroup[label="--------- Extremo austral --------"] option {
     font-weight: bold;
     border-color: aliceblue;
     border-width: 0.8vh;
+    cursor: pointer;
+}
+  
+.recuadro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: #e2c5f3;
+    z-index: 100;
+    display: none;
+    text-align: center;
+    border-radius: 20%;
+    border-style: double dashed;
+    border-color: rgb(165, 9, 168);
+    border-width: 0.35vw;
+}
+
+.recuadro ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 0.25vh;
+    line-height: 3;
 }
 
 .seccionRegiones {
@@ -268,3 +299,24 @@ select optgroup[label="--------- Extremo austral --------"] option {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
+footer{
+    background-color: rgba(0,0,0,0.5);
+    height: 8.8vh; /*Altura*/
+    text-align: center; /*Alinear texto*/
+    color: aliceblue; /*Color del texto*/
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: aliceblue; /*Color del texto*/
+  }
+
+
+/*--------------------------------------------------------------
+# Puntos de corte (Breakpoints)
+--------------------------------------------------------------*/
+
+
+
