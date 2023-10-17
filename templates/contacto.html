@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    
     <title>Ikimasu</title>
 </head>
 
@@ -33,9 +35,63 @@
 
     <!-- Contenido Principal // MAIN -->
     <main>
-        
+        <div class="contacto-prueba">
+            <div class="container mt-5">
+                <h1 class="text-center">Contacto</h1>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+
+                       
+                        <form id="miform" action="https://formspree.io/f/mvojvgwo" method="post">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control"
+                                    placeholder="Ingrese su nombre completo">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo Electrónico:</label>
+                                <input type="email" id="correo" name="correo" class="form-control"
+                                    placeholder="Ingrese su correo electrónico">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control"
+                                    placeholder="Ingrese su número de teléfono">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje:</label>
+                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
+                                    placeholder="Ingrese su mensaje"></textarea>
+                            </div>
+
+                            <!-- Prueba de selector de destinos, puede no incluirse en el formulario final -->
+                            <div class="mb-3">
+                                <label for="destino" class="form-label">Destino de Viaje:</label>
+                                <select id="destino" name="destino" class="form-select">
+                                    <option value="default">Selecciona un destino</option>
+                                    <option value="playa">Playa</option>
+                                    <option value="montaña">Montaña</option>
+                                    <option value="ciudad">Ciudad</option>
+                                    <option value="trekking">Trekking</option>
+                                </select>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="reset" class="btn btn-primary">Borrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
     
+    <!-- Templete de JavaScript -->
+    <script src="../js/contacto.js"></script>
+
 </body>
 </html>

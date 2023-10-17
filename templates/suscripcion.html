@@ -34,7 +34,34 @@
     <!-- Contenido Principal // MAIN -->
     <main>
 
+        <main class="destinos">
+            <div class="contenedor-suscripcion">
+        
+                <div id="info-destino" class="info-destino">
+        
+                    <h1>Buscador de Restaurantes</h1>
+        
+                    <form id="search-form">
+                    <label for="location-input">Ingrese una región:</label>
+                    <input type="text" id="location-input" required>
+                    <button type="submit">Buscar</button>
+                    </form>
+                
+                <div id="results"></div>
+                </div>
+
+                <div class="suscripcion">
+                    <h3>¡No te pierdas ninguna oferta!</h4>
+                    <p>Recibí directamente en tu bandeja de entrada las últimas ofertas y promociones. Disfrutá de lo mejor que tenemos para vos.</p>
+                    <form action="../index.html" method="post">
+                    <input type="email" name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Dirección de email" data-message="¡El correo se envió correctamente!"><input type="submit" value="Suscríbete">
+                    </form>
+                </div>
+
+            </div>
+            
     </main>
     
+    <script src="../js/api2.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* ----LETRA---- */
 @font-face {
-    font-family: 'Prompt';
-    src: url(../fonts/Prompt/Prompt-Medium.ttf)
+    font-family: 'Prompt'; /* Estilo de letra */
+    src: url(../fonts/Prompt/Prompt-Medium.ttf); /* Directorio donde se encuentra el archivo del estilo de letra */
 }
 
 
@@ -18,8 +18,8 @@
 
 /* Fondo */
 .cielo {
-    background: url("../img/Backg/backg7.1.webp") repeat;
-    background-size: cover;
+    background: url("../img/Backg/backg7.1.webp") repeat; /* Fondo desde imagen guardada */
+    background-size: cover; /* ajusta el tamaño de la imagen de fondo para que cubrir todo el contenedor sin distorsionarla */
 }
 
 
@@ -37,7 +37,7 @@
 /* Estilo para el logo */
 #logo {
     width: 4vw;  /*Ancho*/
-    height: auto;/*Altura*/
+    height: auto; /*Altura*/
     border-radius: 30% 30% 30% 30%;  /*Redondea dos vértices del logo*/
     box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw rgba(111, 83, 236, 0.8); /*Agrega sombra alrededor*/
     margin-left: 10vw;
@@ -297,6 +297,47 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
 
 
+/* prueba para ubicar el formulario */
+.contacto-prueba{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20vh;
+    padding: 10vh;
+}
+
+.destinos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20vh;
+    padding: 10vh;
+
+}
+
+.contenedor-suscripcion{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.suscripcion{
+    padding-top: 30vh;
+    padding-right: 40vw;
+    padding-bottom: 2vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -312,12 +353,44 @@ a {
     text-decoration: none;
     outline: none;
     color: aliceblue; /*Color del texto*/
-  }
+}
 
 
 /*--------------------------------------------------------------
 # Puntos de corte (Breakpoints)
 --------------------------------------------------------------*/
 
+/* Estilo para celulares (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  
+    .accion {
+      font-size: 1.5vw; /* Reducir el tamaño de fuente para pantallas más pequeñas */
+    }
+  
+    #destino, #origen {
+      font-size: 1.5vw; /* Reducir el tamaño de fuente para pantallas más pequeñas */
+    }
+  
+    #buscar {
+      font-size: 2vw; /* Reducir el tamaño de fuente para pantallas más pequeñas */
+    }
 
+    .seccion1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .seccion1 .input {
+        width: 50%; /* cada elemento de entrada ocupe la mitad del ancho del elemento padre */
+    }
+  }
+
+/* Tablet and Desktop Styles (min-width: 481px) */
+@media (min-width: 481px) {
+  
+    .seccion1 {
+      flex-wrap: nowrap;
+    }
+  }
 
