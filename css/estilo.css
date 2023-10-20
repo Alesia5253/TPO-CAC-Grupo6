@@ -297,7 +297,8 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
 
 
-/* prueba para ubicar el formulario */
+/* FORMULARIO */
+
 .contacto-prueba{
     display: flex;
     flex-direction: column;
@@ -337,6 +338,46 @@ select optgroup[label="--------- Extremo austral --------"] option {
 } 
 
 
+/* EMPRESA */
+
+#quienes-somos {
+    max-width: 600vh;
+    margin: 0 auto;
+    padding: 13vh;
+    text-align: center;  
+}
+
+#quienes-somos h1 {
+    padding-top: 7vh;
+}
+
+#quienes-somos p {
+    font-size: 1.4vw;
+    color:#030303;
+    line-height: 2;
+}
+
+#ofrecemos {
+    font-size: 1.4vw;
+    color: #49035b;
+    padding-right: 30vh;
+    padding-left: 30vh;
+    text-align: justify;
+}
+
+#eleginos {
+    padding-top: 5vh;
+}
+
+#ultimo-parrafo{
+    font-size: 1.4vw;
+    font-style: italic;
+    padding: 10vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+ }
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -359,38 +400,4 @@ a {
 /*--------------------------------------------------------------
 # Puntos de corte (Breakpoints)
 --------------------------------------------------------------*/
-
-/* Estilo para celulares (max-width: 480px) */
-@media screen and (max-width: 480px) {
-  
-    .accion {
-      font-size: 1.5vw; /* Reducir el tamaño de fuente para pantallas más pequeñas */
-    }
-  
-    #destino, #origen {
-      font-size: 1.5vw; /* Reducir el tamaño de fuente para pantallas más pequeñas */
-    }
-  
-    #buscar {
-      font-size: 2vw; /* Reducir el tamaño de fuente para pantallas más pequeñas */
-    }
-
-    .seccion1 {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    
-    .seccion1 .input {
-        width: 50%; /* cada elemento de entrada ocupe la mitad del ancho del elemento padre */
-    }
-  }
-
-/* Tablet and Desktop Styles (min-width: 481px) */
-@media (min-width: 481px) {
-  
-    .seccion1 {
-      flex-wrap: nowrap;
-    }
-  }
 
