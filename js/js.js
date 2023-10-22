@@ -65,6 +65,3 @@ formulario.addEventListener("submit", function (event) {
 
     // Si todas las validaciones pasan, el formulario se enviará normalmente
 });
-
-
-

@@ -13,7 +13,7 @@
 * {
     margin: 0%; /*Elimina todo margen que trae por defecto*/
     padding: 0%; /*Elimina todo relleno que trae por defecto*/
-    font-family: 'Prompt';
+    font-family: 'Prompt'; /* Estilo de letra */
 }
 
 /* Fondo */
@@ -36,16 +36,18 @@
 
 /* Estilo para el logo */
 #logo {
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     width: 4vw;  /* Se establece el ancho */
     height: auto; /* Se establece la altura, en este caso automáticamente por el navegador, el elemento se adapta */
-    border-radius: 30% 30% 30% 30%;  /* Redondea los vértices del logo, en este caso todos */
+    border-radius: 30%;  /* Redondea los vértices del logo, en este caso todos */
     box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw rgba(111, 83, 236, 0.8); /* Agrega sombra alrededor */
     margin-left: 10vw; /* Genera un margen izquierdo */
-    margin-top: 0.5vw; /* Genera un margen superior */
+    margin-top: 0.1vw; /* Genera un margen superior */
 }
 
 /* Estilo en el encabezado header:*/
 header {
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     background: linear-gradient(to left, rgba(77, 103, 121, 0.2),rgba(250, 249, 249, 0.4)); /* Degradado de colores del fondo*/
     height: 9vh; /* Se establece la altura */
     font-size: 1.3vw; /* Tamaño de texto */
@@ -53,6 +55,12 @@ header {
     border-radius: 0% 0% 5% 5%; /* Redondea los vértices del logo (los extremos ingeriores en este caso) */
     position: fixed; /* Permite mantener siempre en el mismo lugar al header */
     width: 100%; /* Establece el ancho en el 100% del ancho del elemento contenedor */
+}
+
+header nav{
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-direction: row; /* Pone las dos secciones en columnas */
+    text-align: center; /* Centra el texto */
 }
 
 /* Menu */
@@ -114,17 +122,18 @@ ul, ol {
 }
 
 .seccionBuscador {
-    display: flex;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     background-color: #49035b; /* Color del fondo */
     height: auto; /* Se establece la altura */
     border-radius: 15%;  /* Redondea dos vértices */
     box-shadow: 0.4vw 0.4vw 0.1vw 0.1vw rgba(127, 108, 209, 0.8); /* Agrega sombra alrededor */
     padding: 1.5vh; /* Establece el espacio de relleno */
+    margin-top: 8vh; /* Margen superior */
 }
 
 .buscador {
     display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
     justify-content:space-between; /* Distribuye el espacio entre los elementos secundarios de un contenedor flexible */
     align-items: center; /* Centra las los elementos */
     text-align: center; /* Centra el texto */
@@ -163,6 +172,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
 
 #destino {
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     font-size: 2vh; /* Tamaño de la letra */
     margin: 1vw; /* Genera un margen en función del tamaño de la ventana gráfica */
     border-radius: 25%;  /* Redondea los vértices (todos) */
@@ -172,6 +182,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
 
 #origen {
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     font-size: 2vh; /* Tamaño de la letra */
     margin: 1vw; /* Genera un margen en función del tamaño de la ventana gráfica */
     border-radius: 25%; /* Redondea los vértices (todos) */
@@ -197,6 +208,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
 
 #buscar {
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     font-size: 3vh; /* Tamaño de la letra */
     margin-right: 2vw; /* Genera un margen derecho en función del tamaño de la ventana gráfica */
     border-radius: 20%; /* Redondea los vértices (todos) */
@@ -210,6 +222,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
   
 .recuadro {
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     position: fixed; /* Fija la posición */
     top: 50%; /* Establece la posición vertical de un elemento en relación con su contenedor */
     left: 50%; /* Establece la posición horizontal de un elemento en relación con su contenedor */
@@ -228,157 +241,157 @@ select optgroup[label="--------- Extremo austral --------"] option {
 }
 
 .recuadro ul {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    letter-spacing: 0.25vh;
-    line-height: 3;
+    position: absolute; /* Posiciona al elemento de manera absoluta, en la posición que se especifique */
+    top: 50%; /* Establece la posición vertical de un elemento en relación con su contenedor */
+    left: 50%; /* Establece la posición horizontal de un elemento en relación con su contenedor */
+    transform: translate(-50%, -50%); /* Permite colocar el elemento en el centro horizontal y vertical del contenedor */
+    text-align: center; /* Alinea el texto en el centro */
+    width: 100%; /* Establece el ancho en el 100% del ancho del elemento contenedor */
+    font-size: 20px; /* Tamaño de la fuente */
+    letter-spacing: 0.25vh; /* Espaciado entre las letras */
+    line-height: 3; /* Interlineado */
 }
 
 .seccionRegiones {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 6.5vw;
-    margin-top: 2.5vh;
-    margin-bottom: 2.5vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 6.5vw; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    margin-top: 2.5vh; /* Margen superior */
+    margin-bottom: 2.5vh; /* Margen inferior */
 }
 
 .cuyo-litoral
 .noroeste-regionPampeana
 .sierras-regionMetropolitana
 .patagonia-extremoAustral {
-    flex-basis: 20%;
-    margin: 2vw;
-    background-color: black;
-    align-items: center;
+    flex-basis: 20%; /* Establece el tamaño inicial de un elemento flexible en un 20% del tamaño del contenedor  */
+    margin: 2vw; /* Margen */
+    background-color: black; /* Color de fondo */
+    align-items: center; /* Centra las los elementos */
 }
 
 .cuyo-litoral {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 17vh;
-    padding: 3vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    padding: 3vh; /* Establece el espacio de relleno */
 }
 
 .noroeste-regionPampeana {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 17vh;
-    padding: 3vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    padding: 3vh; /* Establece el espacio de relleno */
 }
 
 .sierras-regionMetropolitana {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 17vh;
-    padding: 3vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    padding: 3vh; /* Establece el espacio de relleno */
 }
 
 .patagonia-extremoAustral {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 17vh;
-    padding: 3vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    padding: 3vh; /* Establece el espacio de relleno */
 }
 
 
 /* FORMULARIO */
 
 .contacto-prueba{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20vh;
-    padding: 10vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 20vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    padding: 10vh; /* Establece el espacio de relleno */
 }
 
 .destinos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20vh;
-    padding: 10vh;
+    display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+    flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    gap: 20vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    padding: 10vh; /* Establece el espacio de relleno */
 
 }
 
 .contenedor-suscripcion{
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 30%;
-    left: 30%;
+    align-items: center; /* Centra las los elementos */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor */
+    position: absolute; /* Posiciona al elemento de manera absoluta, en la posición que se especifique */
+    top: 30%; /* Establece la posición vertical de un elemento en relación con su contenedor */
+    left: 30%; /* Establece la posición horizontal de un elemento en relación con su contenedor */
 }
 
 .suscripcion{
-    padding-top: 30vh;
-    padding-right: 40vw;
-    padding-bottom: 2vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    padding-top: 30vh; /* Establece el espacio de relleno en la parte superior */
+    padding-right: 40vw; /* Establece el espacio de relleno en la parte derecha */
+    padding-bottom: 2vh; /* Establece el espacio de relleno en la parte inferior */
+    text-align: center; /* Centra el texto */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor */
+    align-items: center; /* Centra las los elementos */
 } 
 
 
 /* EMPRESA */
 
 #quienes-somos {
-    max-width: 600vh;
-    margin: 0 auto;
-    padding: 13vh;
-    text-align: center;  
+    max-width: 600vh; /* Establece el ancho máximo de un elemento */
+    margin: 0 auto; /* Centra horizontalmente el elemento dentro de su contenedor */
+    padding: 13vh; /* Establece el espacio de relleno */
+    text-align: center;  /* Centra el texto */
 }
 
 #quienes-somos h1 {
-    padding-top: 7vh;
+    padding-top: 7vh; /* Establece el espacio de relleno en la parte superior */
 }
 
 #quienes-somos p {
-    font-size: 1.4vw;
-    color:#030303;
-    line-height: 2;
+    font-size: 1.4vw; /* Tamaño de la fuente */
+    color:#030303; /* Color de la fuente */
+    line-height: 2; /* Establece la altura de línea de un elemento al doble del tamaño de fuente  */
 }
 
 #ofrecemos {
-    font-size: 1.4vw;
-    color: #49035b;
-    padding-right: 30vh;
-    padding-left: 30vh;
-    text-align: justify;
+    font-size: 1.4vw; /* Tamaño de la fuente */
+    color: #49035b; /* Color de la fuente */
+    padding-right: 30vh; /* Establece el espacio de relleno en la parte derecha */
+    padding-left: 30vh; /* Establece el espacio de relleno en la parte izquierda */
+    text-align: justify; /* Justifica el texto */
 }
 
 #eleginos {
-    padding-top: 5vh;
+    padding-top: 5vh; /* Establece el espacio de relleno en la parte superior */
 }
 
 #ultimo-parrafo{
-    font-size: 1.4vw;
-    font-style: italic;
-    padding: 10vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.4vw; /* Tamaño de la fuente */
+    font-style: italic; /* Estilo de la fuente (cursiva) */
+    padding: 10vh; /* Establece el espacio de relleno */
+    text-align: center; /* Texto alineado al centro */
+    justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor */
+    align-items: center; /* Centra las los elementos */
  }
 
 
@@ -389,14 +402,14 @@ select optgroup[label="--------- Extremo austral --------"] option {
 footer{
     background-color: rgba(0,0,0,0.5);
     height: 8.8vh; /*Altura*/
-    text-align: center; /*Alinear texto*/
+    text-align: center; /* Centra el texto */
     color: aliceblue; /*Color del texto*/
     width: 100%; /* Establece el ancho en el 100% del ancho del elemento contenedor */
 }
 
 a {
-    text-decoration: none;
-    outline: none;
+    text-decoration: none; /* Elimina la decoración de texto predeterminada  */
+    outline: none; /* Elimina el contorno que se ubica fuera de los límites del borde de un elemento  */
     color: aliceblue; /*Color del texto*/
 }
 
@@ -405,30 +418,271 @@ a {
 # Puntos de corte (Breakpoints)
 --------------------------------------------------------------*/
 
-@media screen and (max-width: 768px) {
-    .contenedor{
-        padding: 5vh;
+/* Para dispositivos con ancho menor a 640px */
+@media screen and (max-width: 640px) {
+
+    .header-linea {
+        flex-direction: column;  /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+        align-items: normal; /* La altura de cada elemento se estirará para llenar la altura del contenedor  */
+        text-align: center; /* Centra el texto */
+        position: absolute; /* Posiciona al elemento de manera absoluta, en la posición que se especifique */
+        padding: 0px 20px; /* Establece el espacio de relleno */
     }
+
     #logo {
-        width: 6.5vw;
+        width: 10vw; /* Establece el ancho del elemento contenedor */
+        height: auto; /* Establece la altura de un elemento de manera automática */
+        margin-left: 43vw; /* Establece el margen izquierdo */
+    }
+           
+
+    header {
+        flex-direction: row; /* Pone las dos secciones en columnas */
+        text-align: center; /* Centra el texto */
+        height: auto; /* Establece la altura de un elemento de manera automática */
+    }
+    
+    header nav{
+        display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+        flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+        text-align: center; /* Centra el texto */
+        padding-bottom: 4vh; /* Relleno inferior */
+    }
+     
+    .contenedor{
+        flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+        padding-top: 10vh; /* Establece el espacio de relleno en la parte superior */
+    }
+
+    #principal{
+        display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+        flex-direction: column;  /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
     }
 
     .menu {
-        margin-right: 5vw;
-        font-size: 3vh;
+        margin-right: 5vw; /* Margen derecho */
+        font-size: 3vh; /* Tamaño de la fuente */
     }
+
+    .seccionBuscador {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna para dispositivos móviles */
+        padding: 1vh; /* Ajusta el padding para dispositivos móviles */
+        margin-top: 20vh; /* Margen superior */
+    }
+
+    .seccionRegiones{
+        flex-direction: row; /* Pone las dos secciones en columnas */
+        justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor */
+        align-items: center; /* Centra las los elementos */
+        gap: 6.5vw; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+        margin-top: 10vh; /* Margen superior */
+        margin-bottom: 10vh; /* Margen inferior */
+    }
+    
+    .buscador {
+        flex-direction: row; /* Pone las dos secciones en columnas */
+    }
+
+    #buscar{
+        margin-left: 35vw; /*centra el boton buscar*/
+    }
+
+    #destino {
+        margin-left: 10vw; /* Margen izquierdo */
+     }
+     
+     #origen {
+         margin-left: 10vw; /* Margen izquierdo */
+     }
+     
+     #fechasIF {
+        margin-left: 10vw; /* Margen izquierdo */
+    }
+    
+    #fechaInicio {
+        margin-left: 5vw; /* Margen izquierdo */
+    }
+    
+    #fechaFin {
+        margin-left: 5vw;  /* Margen izquierdo */
+    }
+
+    footer{
+        padding: 0px 20px; /* Establece el espacio de relleno */
+    }
+
+    .buscador {
+        flex-direction: row; /* Pone las dos secciones en columnas */
+    }
+
+    #buscar{
+        margin-left: 40vw; /* Margen izquierdo */    
+    }
+
+    .contacto-prueba{
+        padding-top: 20vh; /* Establece el espacio de relleno en la parte superior */
+    }
+
+   
+    /* EMPRESA */
+    #quienes-somos {
+        padding-top: 25vh; /* Establece el espacio de relleno en la parte superior */
+    }
+    
+    #quienes-somos h1 {
+        padding-top: 7vh; /* Establece el espacio de relleno en la parte superior */
+    }
+    
+    #quienes-somos p {
+        font-size: 4vw; /* Tamaño de la fuente */
+        color:#030303; /* Color de la fuente */
+        line-height: 2; /* Establece la altura de línea de un elemento al doble del tamaño de fuente  */
+    }
+      
+    #ofrecemos, #ultimo-parrafo {
+        padding: 20px; /* Agrega un poco de espacio alrededor del contenido para mejorar la legibilidad en pantallas pequeñas */
+    }
+
+    h1, h2 {
+        font-size: 1.5rem; /* Reduce el tamaño de fuente de los títulos */
+    }
+
+    p, li {
+        font-size: 1rem; /* Reduce el tamaño de fuente del texto */
+    }   
 }
 
-@media screen and (max-width: 480px) {
-    .contenedor{
-        padding: 7vh;
+
+/* Para dispositivos con ancho menor a 1280px */
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+    
+    .header-linea {
+        flex-direction: row; /* Pone las dos secciones en columnas */
+        align-items: center; /* Centra las los elementos */
+        justify-content: space-between; /* Distribuye el espacio disponible entre los elementos secundarios de un contenedor flexible */
+        text-align: center; /* Centra el texto */
+        position: absolute; /* Posiciona al elemento de manera absoluta, en la posición que se especifique */
+        margin: 0 auto; /* Centra horizontalmente el elemento dentro de su contenedor */
+        padding: 10px 20px; /* Establece el espacio de relleno */
     }
+      
     #logo {
-        width: 12vw;
+        width: 100px;  /* Establece el ancho en el 100% del ancho del elemento contenedor */
+        height: auto; /* Establece la altura de un elemento de manera automática */        
+    }
+    
+
+    header {
+        flex-direction: row; /* Pone las dos secciones en columnas */
+        text-align: center; /* Centra el texto */
+        height: auto; /* Establece la altura de un elemento de manera automática */    
+    }
+    
+    header nav {
+        display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+        flex-direction: row; /* Pone las dos secciones en columnas */
+        text-align: center; /* Centra el texto */
+        padding-bottom: 1vh;  /* Establece el espacio de relleno en la parte inferior */      
+    }
+       
+    .menu {
+        font-size: 16px; /* Tamaño de la fuente */
+        margin-right: 20px; /* Margen derecho */
+        }
+         
+    .contenedor{
+        flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
+        justify-content: space-between; /* Distribuye el espacio disponible entre los elementos secundarios de un contenedor flexible */   
+    }
+    
+    #logo {
+        width: 10vw; /* Establece el ancho del elemento contenedor */
+        height: auto; /* Establece la altura de un elemento de manera automática */
+        margin-top: 1vh; /* Margen superior */
+        margin-left: 1vw; /* Margen izquierdo */
     }
 
     .menu {
-        margin-right: 7vw;
-        font-size: 2vh;
+        margin-right: 5vw; /* Margen derecho */
+        font-size: 5vh; /* Tamaño de la fuente */
     }
+
+    .seccionBuscador {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna para dispositivos móviles */
+        padding: 1vh; /* Ajusta el padding para dispositivos móviles */
+        margin-top: 13vh; /* Margen superior */
+    }
+
+   .seccionRegiones{
+        display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+        flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
+        justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
+        align-items: center; /* Centra las los elementos */
+        gap: 6.5vw; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+        margin-top: 2.5vh; /* Margen superior */
+        margin-bottom: 2.5vh; /* Margen inferior */
+    }
+    
+    .buscador {
+        flex-direction: row; /* Pone las dos secciones en columnas */
+    }
+
+    #buscar{
+        margin-left: 35vw; /* Margen izquierdo */
+    }
+
+    #destino {
+       margin-left: 15vw; /* Margen izquierdo */
+    }
+    
+    #origen {
+        margin-left: 15vw; /* Margen izquierdo */
+    }
+    
+    #fechasIF {
+        margin-left: 15vw; /* Margen izquierdo */
+    }
+    
+    #fechaInicio {
+        margin-left: 5vw; /* Margen izquierdo */   
+    }
+    
+    #fechaFin {
+        margin-left: 5vw; /* Margen izquierdo */   
+    }
+
+    footer{
+        padding: 0px 20px; /* Establece el espacio de relleno */
+    }
+
+    .contacto-prueba{
+        padding-top: 15vh; /* Establece el espacio de relleno en la parte superior */
+    }
+
+
+    /* EMPRESA */
+    #quienes-somos {
+        padding-top: 20vh; /* Establece el espacio de relleno en la parte superior */
+    }
+    
+    #quienes-somos h1 {
+        padding-top: 1vh; /* Establece el espacio de relleno en la parte superior */
+    }
+    
+    #quienes-somos p {
+        font-size: 2vw; /* Tamaño de la fuente */
+        line-height: 2; /* Establece la altura de línea de un elemento al doble del tamaño de fuente  */
+    }
+
+    #ofrecemos, #ultimo-parrafo {
+        padding: 20px; /* Agrega un poco de espacio alrededor del contenido para mejorar la legibilidad en pantallas pequeñas */
+    }
+
+    h1, h2 {
+        font-size: 4vw /* Reduce el tamaño de fuente de los títulos */
+    }
+
+    p, li {
+        font-size: 2vw; /* Reduce el tamaño de fuente del texto */
+    } 
 }

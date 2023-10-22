@@ -65,5 +65,3 @@ document.getElementById('search-form').addEventListener('submit', function(event
         resultsDiv.innerHTML = '<p>Por favor, ingrese una región.</p>';
     }
 });
-
-
