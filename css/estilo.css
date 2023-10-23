@@ -385,6 +385,21 @@ select optgroup[label="--------- Extremo austral --------"] option {
     padding-top: 5vh; /* Establece el espacio de relleno en la parte superior */
 }
 
+#ubicacion{
+    display: flex;
+    flex-direction:column; /* Pone las dos secciones en columnas */
+    align-items: center; /* Centra las columnas verticalmente */
+    text-align: center; /* Centra el texto */
+    padding: 1vw; /* Crea espacio dentro del elemento (relleno) */
+    margin-top: 10vh; /* Establece margen superior */
+}
+
+#titulo-ubicacion{
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 2vh;
+}
+
 #ultimo-parrafo{
     font-size: 1.4vw; /* Tamaño de la fuente */
     font-style: italic; /* Estilo de la fuente (cursiva) */
