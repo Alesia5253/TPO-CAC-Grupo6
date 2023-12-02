@@ -83,8 +83,8 @@ header nav{
     justify-content:space-between; /* Centra las columnas horizontalmente */
     align-items: center; /* Centra las columnas verticalmente */
     text-align: center; /* Centra el texto */
-    padding: 1vw; /* Crea espacio dentro del elemento (relleno) */
-    padding-top: 2.5vh; /* Establece el espacio de relleno en la parte superior */
+    padding: 0.5vw; /* Crea espacio dentro del elemento (relleno) */
+    padding-top: 2vh; /* Establece el espacio de relleno en la parte superior */
 }
 
 ul, ol {
@@ -93,7 +93,7 @@ ul, ol {
 
 .seccion1 {
     flex-grow: 1; /* Especifica la proporción de espacio disponible que un elemento flexible debe ocupar */
-    margin: 3.5vw; /* Genera un margen general en función del tamaño de la ventana gráfica */
+    margin: 0.5vw; /* Genera un margen general en función del tamaño de la ventana gráfica */
 }
 
 #menu {
@@ -123,6 +123,9 @@ ul, ol {
 
 .seccionBuscador {
     display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
+    justify-content:center; /* Distribuye el espacio entre los elementos secundarios de un contenedor flexible */
+    align-items: center; /* Centra las los elementos */
+    text-align: center; /* Centra el texto */
     background-color: #49035b; /* Color del fondo */
     height: auto; /* Se establece la altura */
     border-radius: 15%;  /* Redondea dos vértices */
@@ -134,7 +137,7 @@ ul, ol {
 .buscador {
     display: flex; /* Propiedad que permite que los elementos secundarios se ajusten automáticamente al ancho del contenedor */
     flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
-    justify-content:space-between; /* Distribuye el espacio entre los elementos secundarios de un contenedor flexible */
+    justify-content:center; /* Distribuye el espacio entre los elementos secundarios de un contenedor flexible */
     align-items: center; /* Centra las los elementos */
     text-align: center; /* Centra el texto */
 }
@@ -257,8 +260,8 @@ select optgroup[label="--------- Extremo austral --------"] option {
     flex-wrap: wrap; /* Permite que los elementos fluyan en varias líneas según sea necesario */
     justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
     align-items: center; /* Centra las los elementos */
-    gap: 6.5vw; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
-    margin-top: 2.5vh; /* Margen superior */
+    gap: 7vw; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    margin-top: 2vh; /* Margen superior */
     margin-bottom: 2.5vh; /* Margen inferior */
 }
 
@@ -278,8 +281,9 @@ select optgroup[label="--------- Extremo austral --------"] option {
     flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
     justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
     align-items: center; /* Centra las los elementos */
-    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    gap: 25vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
     padding: 3vh; /* Establece el espacio de relleno */
+    font-weight: bold; /* Negrita */
 }
 
 .noroeste-regionPampeana {
@@ -288,7 +292,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
     flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
     justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
     align-items: center; /* Centra las los elementos */
-    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    gap: 25vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
     padding: 3vh; /* Establece el espacio de relleno */
 }
 
@@ -298,7 +302,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
     flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
     justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
     align-items: center; /* Centra las los elementos */
-    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    gap: 25vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
     padding: 3vh; /* Establece el espacio de relleno */
 }
 
@@ -308,7 +312,7 @@ select optgroup[label="--------- Extremo austral --------"] option {
     flex-direction: column; /* Los elementos secundarios se colocan en una columna vertical, de arriba hacia abajo */
     justify-content: center; /* Permite que los elementos se alineen en el centro del contenedor flexible */
     align-items: center; /* Centra las los elementos */
-    gap: 17vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
+    gap: 25vh; /* Especifica el espacio entre las filas y columnas de una cuadrícula */
     padding: 3vh; /* Establece el espacio de relleno */
 }
 

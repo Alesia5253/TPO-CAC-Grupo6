@@ -6,8 +6,8 @@
 
   .cuyo {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     text-align: center;
   }
   
@@ -33,17 +33,17 @@
   
   .cuyo:hover .img1 {
     opacity: 1;
-    transform: scale(1.5) translate(0px, 50px);
+    transform: scale(1.5) translate(0px, 75px);
   }
 
   .cuyo:hover .img2 {
     opacity: 1;
-    transform: scale(1.5) translate(-50px, -50px);
+    transform: scale(1.5) translate(-75px, -75px);
   }
   
   .cuyo:hover .img3 {
     opacity: 1;
-    transform: scale(1.5) translate(50px, -50px);
+    transform: scale(1.5) translate(75px, -75px);
   }
   
   .cuyo img {
@@ -57,8 +57,8 @@
 
   .litoral {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   
   .litoral img {
@@ -83,17 +83,17 @@
   
   .litoral:hover .img4 {
     opacity: 1;
-    transform: scale(1.5) translate(0px, 50px);
+    transform: scale(1.5) translate(0px, 75px);
   }
 
   .litoral:hover .img5 {
     opacity: 1;
-    transform: scale(1.5) translate(-50px, -50px);
+    transform: scale(1.5) translate(-75px, -75px);
   }
   
   .litoral:hover .img6 {
     opacity: 1;
-    transform: scale(1.5) translate(50px, -50px);
+    transform: scale(1.5) translate(75px, -75px);
   }
   
   .litoral img {
@@ -107,8 +107,8 @@
 
   .noroeste {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   
   .noroeste img {
@@ -133,17 +133,17 @@
   
   .noroeste:hover .img7 {
     opacity: 1;
-    transform: scale(1.5) translate(0px, 50px);
+    transform: scale(1.5) translate(0px, 75px);
   }
 
   .noroeste:hover .img8 {
     opacity: 1;
-    transform: scale(1.5) translate(-50px, -50px);
+    transform: scale(1.5) translate(-75px, -75px);
   }
   
   .noroeste:hover .img9 {
     opacity: 1;
-    transform: scale(1.5) translate(50px, -50px);
+    transform: scale(1.5) translate(75px, -75px);
   }
   
   .noroeste img {
@@ -157,8 +157,8 @@
 
   .regionPampeana {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   
   .regionPampeana img {
@@ -183,17 +183,17 @@
   
   .regionPampeana:hover .img10 {
     opacity: 1;
-    transform: scale(1.5) translate(0px, 50px);
+    transform: scale(1.5) translate(0px, 75px);
   }
 
   .regionPampeana:hover .img11 {
     opacity: 1;
-    transform: scale(1.5) translate(-50px, -50px);
+    transform: scale(1.5) translate(-75px, -75px);
   }
   
   .regionPampeana:hover .img12 {
     opacity: 1;
-    transform: scale(1.5) translate(50px, -50px);
+    transform: scale(1.5) translate(75px, -75px);
   }
   
   .regionPampeana img {
@@ -207,8 +207,8 @@
 
       .sierras {
         position: relative;
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
       }
       
       .sierras img {
@@ -233,17 +233,17 @@
       
       .sierras:hover .img13 {
         opacity: 1;
-        transform: scale(1.5) translate(0px, 50px);
+        transform: scale(1.5) translate(0px, 75px);
       }
     
       .sierras:hover .img14 {
         opacity: 1;
-        transform: scale(1.5) translate(-50px, -50px);
+        transform: scale(1.5) translate(-75px, -75px);
       }
       
       .sierras:hover .img15 {
         opacity: 1;
-        transform: scale(1.5) translate(50px, -50px);
+        transform: scale(1.5) translate(75px, -75px);
       }
       
       .sierras img {
@@ -258,8 +258,8 @@
 
       .regionMetropolitana {
         position: relative;
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
       }
       
       .regionMetropolitana img {
@@ -284,17 +284,17 @@
       
       .regionMetropolitana:hover .img16 {
         opacity: 1;
-        transform: scale(1.5) translate(0px, 50px);
+        transform: scale(1.5) translate(0px, 75px);
       }
     
       .regionMetropolitana:hover .img17 {
         opacity: 1;
-        transform: scale(1.5) translate(-50px, -50px);
+        transform: scale(1.5) translate(-75px, -75px);
       }
       
       .regionMetropolitana:hover .img18 {
         opacity: 1;
-        transform: scale(1.5) translate(50px, -50px);
+        transform: scale(1.5) translate(75px, -75px);
       }
       
       .regionMetropolitana img {
@@ -307,8 +307,8 @@
 
     .patagonia {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
     }
     
     .patagonia img {
@@ -333,17 +333,17 @@
     
     .patagonia:hover .img19 {
       opacity: 1;
-      transform: scale(1.5) translate(0px, 50px);
+      transform: scale(1.5) translate(0px, 75px);
     }
   
     .patagonia:hover .img20 {
       opacity: 1;
-      transform: scale(1.5) translate(-50px, -50px);
+      transform: scale(1.5) translate(-75px, -75px);
     }
     
     .patagonia:hover .img21 {
       opacity: 1;
-      transform: scale(1.5) translate(50px, -50px);
+      transform: scale(1.5) translate(75px, -75px);
     }
     
     .patagonia img {
@@ -356,8 +356,8 @@
 
     .extremoAustral {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
     }
     
     .extremoAustral img {
@@ -382,17 +382,17 @@
     
     .extremoAustral:hover .img22 {
       opacity: 1;
-      transform: scale(1.5) translate(0px, 50px);
+      transform: scale(1.5) translate(0px, 75px);
     }
   
     .extremoAustral:hover .img23 {
       opacity: 1;
-      transform: scale(1.5) translate(-50px, -50px);
+      transform: scale(1.5) translate(-75px, -75px);
     }
     
     .extremoAustral:hover .img24 {
       opacity: 1;
-      transform: scale(1.5) translate(50px, -50px);
+      transform: scale(1.5) translate(75px, -75px);
     }
     
     .extremoAustral img {
