@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Viajes</title>
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <main>
+
+        <section class="container">
+            <div id="app" >
+
+                <!-- Botón Nuevo -->
+                <a class="nuevo" href="templates/ingresar_viaje.html">Nuevo</a>
+
+                <section v-if="error">Lo sentimos se produjo un error</section>
+                <section v-else>
+                    <section v-if="cargando">
+                        <div class="spinner-border"></div>
+                        <p>Cargando .....</p>
+
+                    </section>
+                    <section v-else>
+                        
+                        <div >
+                            <table class="tabla">
+                                <thead>
+                                    <tr>
+                                        <!-- <th>ID</th> -->
+                                        <th>Destino</th>
+                                        <th>Origen</th>
+                                        <th>Costo</th>
+                                        <th>Dias</th>
+                                        <!-- <th>Imagen</th> -->
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                    <tr v-for="viaje in viajes">
+                                        <!-- <td >{{viaje.id}}</td> -->
+                                        <td>{{viaje.destino}}</td>
+                                        <td>{{viaje.origen}}</td>
+                                        <td>{{viaje.costo}}</td>
+                                        <td>{{viaje.dias}}</td>
+                                        <!-- <td>
+                                            <img :src="viaje.imagen" alt="">
+                                        </td> -->
+                                        <td>
+                                            <button type="button"  v-on:click="eliminar(viaje.id)">Eliminar</button>
+                                        </td>
+                                        <td>
+                                            <a class="boton" :href="'templates/editar_viaje.html?id='+ viaje.id+'&destino=' +viaje.destino+ '&costo='+viaje.costo+'&dias='+viaje.dias">Editar</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>
